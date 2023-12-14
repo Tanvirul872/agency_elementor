@@ -35,11 +35,17 @@ function register_hello_world_widget( $widgets_manager ) {
 	require_once( __DIR__ . '/widgets/home-hero-widget.php' );
 	require_once( __DIR__ . '/widgets/home-second-widget.php' );
     require_once( __DIR__ . '/widgets/home-third-widget.php' );
+
+	require_once( __DIR__ . '/widgets/home-fourth-widget.php' );
+	// require_once( __DIR__ . '/widgets/home-fifth-widget.php' );
 	
     $widgets_manager->register( new \Banner_widget() );
 	$widgets_manager->register( new \Hero_widget() );
 	$widgets_manager->register( new \Home_second_widget() );
 	$widgets_manager->register( new \Home_third_widget() );
+	$widgets_manager->register( new \Home_fourth_widget() );
+	// $widgets_manager->register( new \Home_fifth_widget() );
+
 
 }
 add_action( 'elementor/widgets/register', 'register_hello_world_widget' ); 
