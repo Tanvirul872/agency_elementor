@@ -56,46 +56,46 @@ class Home_fourth_widget extends \Elementor\Widget_Base
 
 
 
-		// Style Tab Start for title
-		$this->start_controls_section(
-			'section_title_style',
-			[
-				'label' => esc_html__( 'Title', 'elementor-addon' ),
-				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
-			]
-		);
+        // Style Tab Start for title
+        $this->start_controls_section(
+            'section_title_style',
+            [
+                'label' => esc_html__('Title', 'elementor-addon'),
+                'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+            ]
+        );
 
 
-		$this->add_control(
-			'h4_title_color',
-			[
-				'label' => esc_html__( 'Color', 'elementor-addon' ),
-				'type' => \Elementor\Controls_Manager::HEADING,
-				'separator' => 'after',
-			]
-		);
+        $this->add_control(
+            'h4_title_color',
+            [
+                'label' => esc_html__('Color', 'elementor-addon'),
+                'type' => \Elementor\Controls_Manager::HEADING,
+                'separator' => 'after',
+            ]
+        );
 
-		// color 
-		$this->add_control(
-			'title_color',
-			[
-				'label' => esc_html__( 'Color', 'elementor-addon' ),
-				'type' => \Elementor\Controls_Manager::COLOR,
-				'default' => '#fff' ,
-				'selectors' => [
-					'{{WRAPPER}} .section-heading h2' => 'color: {{VALUE}}',
-				],
-			]
-		);
+        // color 
+        $this->add_control(
+            'title_color',
+            [
+                'label' => esc_html__('Color', 'elementor-addon'),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'default' => '#fff',
+                'selectors' => [
+                    '{{WRAPPER}} .section-heading h2' => 'color: {{VALUE}}',
+                ],
+            ]
+        );
 
-		// typography 
-		$this->add_group_control(
-			\Elementor\Group_Control_Typography::get_type(),
-			[
-				'name' => 'content_typography',
-				'selector' => '{{WRAPPER}} .section-heading h2',
-			]
-		);
+        // typography 
+        $this->add_group_control(
+            \Elementor\Group_Control_Typography::get_type(),
+            [
+                'name' => 'content_typography',
+                'selector' => '{{WRAPPER}} .section-heading h2',
+            ]
+        );
 
 
         $this->end_controls_section();
@@ -134,45 +134,45 @@ class Home_fourth_widget extends \Elementor\Widget_Base
         // Description Tab end
 
         // Style Tab Start for description
-		$this->start_controls_section(
-			'4_section_des_style',
-			[
-				'label' => esc_html__( 'Description', 'elementor-addon' ),
-				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
-			]
-		);
+        $this->start_controls_section(
+            '4_section_des_style',
+            [
+                'label' => esc_html__('Description', 'elementor-addon'),
+                'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+            ]
+        );
 
 
-		$this->add_control(
-			'h4_des_color',
-			[
-				'label' => esc_html__( 'Color', 'elementor-addon' ),
-				'type' => \Elementor\Controls_Manager::HEADING,
-				'separator' => 'after',
-			]
-		);
+        $this->add_control(
+            'h4_des_color',
+            [
+                'label' => esc_html__('Color', 'elementor-addon'),
+                'type' => \Elementor\Controls_Manager::HEADING,
+                'separator' => 'after',
+            ]
+        );
 
-		// color 
-		$this->add_control(
-			'4_des_color',
-			[
-				'label' => esc_html__( 'Color', 'elementor-addon' ),
-				'type' => \Elementor\Controls_Manager::COLOR,
-				'default' => '#fff' ,
-				'selectors' => [
-					'{{WRAPPER}} .section-heading p' => 'color: {{VALUE}}',
-				],
-			]
-		);
+        // color 
+        $this->add_control(
+            '4_des_color',
+            [
+                'label' => esc_html__('Color', 'elementor-addon'),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'default' => '#fff',
+                'selectors' => [
+                    '{{WRAPPER}} .section-heading p' => 'color: {{VALUE}}',
+                ],
+            ]
+        );
 
-		// typography 
-		$this->add_group_control(
-			\Elementor\Group_Control_Typography::get_type(),
-			[
-				'name' => '4_desc_typography',
-				'selector' => '{{WRAPPER}} .section-heading p',
-			]
-		);
+        // typography 
+        $this->add_group_control(
+            \Elementor\Group_Control_Typography::get_type(),
+            [
+                'name' => '4_desc_typography',
+                'selector' => '{{WRAPPER}} .section-heading p',
+            ]
+        );
 
 
         $this->end_controls_section();
@@ -181,7 +181,141 @@ class Home_fourth_widget extends \Elementor\Widget_Base
 
 
 
-        
+        // Content Tab Start
+
+        $this->start_controls_section(
+            '4_section_content_title',
+            [
+                'label' => esc_html__('Content', 'elementor-addon'),
+                'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
+            ]
+        );
+
+
+
+
+        $this->add_control(
+            '4_content_lists',
+            [
+                'label' => esc_html__('Repeater List', 'elementor-addon'),
+                'type' => \Elementor\Controls_Manager::REPEATER,
+                'fields' => [
+                    [
+                        'name' => 'section_4_list_title',
+                        'label' => esc_html__('Title', 'elementor-addon'),
+                        'type' => \Elementor\Controls_Manager::TEXT,
+                        'default' => esc_html__('List Title', 'elementor-addon'),
+                        'label_block' => true,
+                    ],
+                    [
+                        'name' => 'section_4_list_desc',
+                        'label' => esc_html__('Content', 'elementor-addon'),
+                        'type' => \Elementor\Controls_Manager::WYSIWYG,
+                        'default' => esc_html__('List Content', 'elementor-addon'),
+                        'show_label' => false,
+                    ],
+                    [
+                        'name' => 'list_color',
+                        'label' => esc_html__('Color', 'elementor-addon'),
+                        'type' => \Elementor\Controls_Manager::COLOR,
+                        'selectors' => [
+                            '{{WRAPPER}} {{CURRENT_ITEM}}' => 'color: {{VALUE}}'
+                        ],
+                    ]
+                ],
+                'default' => [
+                    [
+                        'section_4_list_title' => esc_html__('Digital Agency & Marketing 11', 'elementor-addon'),
+                        'section_4_list_desc' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis, distinctio.', 'elementor-addon'),
+                    ],
+                    [
+                        'section_4_list_title' => esc_html__('Planning To Startup 1', 'elementor-addon'),
+                        'section_4_list_desc' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis, distinctio.', 'elementor-addon'),
+                    ],
+                    [
+                        'section_4_list_title' => esc_html__('Content Management 22', 'elementor-addon'),
+                        'section_4_list_desc' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis, distinctio.', 'elementor-addon'),
+                    ],
+                ],
+                'title_field' => '{{{ section_4_list_title }}}',
+            ]
+        );
+
+
+        $this->end_controls_section();
+        // Content Tab end
+
+        // button Tab Start
+        $this->start_controls_section(
+            'section_4_button',
+            [
+                'label' => esc_html__('Button', 'elementor-addon'),
+                'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
+            ]
+        );
+
+
+        $this->add_control(
+            'h4_button_title',
+            [
+                'label' => esc_html__('Button Title', 'elementor-addon'),
+                'type' => \Elementor\Controls_Manager::TEXT,
+                'default' => esc_html__('Learn More', 'elementor-addon'),
+                'placeholder' => esc_html__('Your Title here', 'elementor-addon'),
+            ]
+        );
+
+        $this->end_controls_section();
+
+        // button Tab Start
+
+
+
+        // Style Tab Start for button
+        $this->start_controls_section(
+            '4_section_btn_style',
+            [
+                'label' => esc_html__('Button', 'elementor-addon'),
+                'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+            ]
+        );
+
+
+        $this->add_control(
+            'h4_btn_color',
+            [
+                'label' => esc_html__('Color', 'elementor-addon'),
+                'type' => \Elementor\Controls_Manager::HEADING,
+                'separator' => 'after',
+            ]
+        );
+
+        // color 
+        $this->add_control(
+            'h4_btn_color_',
+            [
+                'label' => esc_html__('Color', 'elementor-addon'),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'default' => '#fff',
+                'selectors' => [
+                    '{{WRAPPER}} .kh_btn' => 'color: {{VALUE}} !important',
+                ],
+            ]
+        );
+
+        // // typography 
+        // $this->add_group_control(
+        //     \Elementor\Group_Control_Typography::get_type(),
+        //     [
+        //         'name' => '4_btn_typography',
+        //         'selector' => '{{WRAPPER}} .btn-bordered',
+        //     ]
+        // );
+
+
+        $this->end_controls_section();
+        // Style Tab end for button
+
 
 
 
@@ -193,8 +327,10 @@ class Home_fourth_widget extends \Elementor\Widget_Base
     {
 
         $settings = $this->get_settings_for_display();
-        $h4_title =   $settings['h4_title'];  
-        $section_4_short_desc =   $settings['section_4_short_desc'];  
+        $h4_title =   $settings['h4_title'];
+        $section_4_short_desc =   $settings['section_4_short_desc'];
+        $content_lists =   $settings['4_content_lists'];
+        $h4_button_title =   $settings['h4_button_title'];
 
 
 
@@ -260,39 +396,31 @@ class Home_fourth_widget extends \Elementor\Widget_Base
                             <div class="section-heading text-center mb-3">
                                 <h2> <?php echo $h4_title; ?></h2>
                                 <p class="d-none d-sm-block mt-4"><?php echo $section_4_short_desc; ?></p>
-                                
+
                             </div>
                             <!-- Content List -->
-                            <ul class="content-list text-left">
-                                <!-- Single Content List -->
-                                <li class="single-content-list media py-2">
-                                    <div class="content-icon pr-4">
-                                        <span class="color-2"><i class="fas fa-angle-double-right"></i></span>
-                                    </div>
-                                    <div class="content-text media-body">
-                                        <span><b>Digital Agency &amp; Marketing</b><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis, distinctio.</span>
-                                    </div>
-                                </li>
-                                <!-- Single Content List -->
-                                <li class="single-content-list media py-2">
-                                    <div class="content-icon pr-4">
-                                        <span class="color-2"><i class="fas fa-angle-double-right"></i></span>
-                                    </div>
-                                    <div class="content-text media-body">
-                                        <span><b>Planning To Startup</b><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis, distinctio.</span>
-                                    </div>
-                                </li>
-                                <!-- Single Content List -->
-                                <li class="single-content-list media py-2">
-                                    <div class="content-icon pr-4">
-                                        <span class="color-2"><i class="fas fa-angle-double-right"></i></span>
-                                    </div>
-                                    <div class="content-text media-body">
-                                        <span><b>Content Management</b><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis, distinctio.</span>
-                                    </div>
-                                </li>
-                            </ul>
-                            <a href="#" class="btn btn-bordered mt-4">Learn More</a>
+                            <?php if ($content_lists) { ?>
+                                <ul class="content-list text-left">
+                                    <!-- Single Content List -->
+
+                                    <?php foreach ($content_lists as $item) { ?>
+                                        <li class="single-content-list media py-2">
+                                            <div class="content-icon pr-4">
+                                                <span class="color-2"><i class="fas fa-angle-double-right"></i></span>
+                                            </div>
+                                            <div class="content-text media-body">
+                                                <span><b><?php echo $item['section_4_list_title'] ?></b><br><?php echo $item['section_4_list_desc'] ?></span>
+                                            </div>
+                                        </li>
+
+                                    <?php } ?>
+
+
+
+                                </ul>
+
+                            <?php } ?>
+                            <a href="#" class="btn btn-bordered mt-4 kh_btn"><?php echo $h4_button_title; ?></a>
                         </div>
                     </div>
                 </div>

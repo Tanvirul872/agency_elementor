@@ -1,330 +1,290 @@
 <?php
-class Home_fifth_widget extends \Elementor\Widget_Base {
+class Home_fifth_widget extends \Elementor\Widget_Base
+{
 
-	public function get_name() {
-		return 'home_fifth';
-	}
-
-	public function get_title() {
-		return esc_html__( 'Home fifth', 'elementor-addon' );
-	}
-
-	public function get_icon() {
-		return 'eicon-code';
-	}
-
-	public function get_categories() {
-		return [ 'custom-theme-agency' ];
-	}
-
-	public function get_keywords() {
-		return [ 'Home', 'fifth' ]; 
-	}
-
-    // Function to get taxonomy options dynamically
-    protected function get_taxonomies_options() {
-        $taxonomies = get_categories(array('hide_empty'=>false));
-        // echo '<pre>' ;
-        // print_r($taxonomies) ;
-        $options = [];
-
-        foreach ( $taxonomies as $taxonomy ) {
-            $options[ $taxonomy->slug ] = $taxonomy->name;
-        }
-
-        return $options;
+    public function get_name()
+    {
+        return 'home_fifth';
     }
-         
 
-	protected function register_controls() {
+    public function get_title()
+    {
+        return esc_html__('Home fifth', 'elementor-addon');
+    }
 
-		// Content Tab Start
+    public function get_icon()
+    {
+        return 'eicon-code';
+    }
 
-		$this->start_controls_section(
-			'section_title',
-			[
-				'label' => esc_html__( 'Title', 'elementor-addon' ),
-				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
-			]
-		);
-    
+    public function get_categories()
+    {
+        return ['custom-theme-agency'];
+    }
 
-		    //  title 
-			$this->add_control(
-				'h4_title',
-				[
-					'label' => esc_html__( 'Title', 'textdomain' ),
-					'type' => \Elementor\Controls_Manager::TEXT,
-					'default' => esc_html__( 'work smarter,not harder.', 'textdomain' ),
-					'placeholder' => esc_html__( 'Your Title here', 'textdomain' ),
-				]
-			);
-
-              //  description 
-              $this->add_control(
-                'h4_desc',
-                [
-                    'label' => esc_html__( 'Description', 'textdomain' ),
-                    'type' => \Elementor\Controls_Manager::TEXTAREA,
-                    'rows' => 10,
-                    'default' => esc_html__( 'Lorem ipsum dolor sit amet, consectetur
-                     adipisicing elit. Laborum obcaecati dignissimos quae quo ad iste ipsum officiis deleniti asperiores sit.', 'textdomain' ),
-                    'placeholder' => esc_html__( 'Type your description here', 'textdomain' ),
-                ]
-            );
-
-		
-
-            $this->add_control(
-                'border_style',
-                [
-                    'label' => esc_html__( 'Border Style', 'textdomain' ),
-                    'type' => \Elementor\Controls_Manager::SELECT,
-                    'default' => 'solid',
-                    'options' => $this->get_taxonomies_options(),
-                    'selectors' => [
-                        '{{WRAPPER}} .your-class' => 'border-style: {{VALUE}};',
-                    ],
-                ]
-            );
+    public function get_keywords()
+    {
+        return ['Home', 'fifth'];
+    }
 
 
-            
-		
-	
 
 
-        $this->end_controls_section();
+    protected function register_controls()
+    {
 
-
-        
+        // title Tab Start
 
         $this->start_controls_section(
-			'section_image',
-			[
-				'label' => esc_html__( 'image', 'elementor-addon' ),
-				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
-			]
-		);
-    
+            'section_5_title_tab',
+            [
+                'label' => esc_html__('Title', 'elementor-addon'),
+                'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
+            ]
+        );
 
 
-
+        //  title 
         $this->add_control(
-			'h4_image',
-			[
-				'label' => esc_html__( 'Choose Image', 'textdomain' ),
-				'type' => \Elementor\Controls_Manager::MEDIA,
-				'default' => [
-                    'url' => get_template_directory_uri() . '/<?php echo get_template_directory_uri(); ?>/assets/img/content/profile-icons/profile_icon_1.svg',
-                ],
-			]
-		);
-
-
-        $this->add_control(
-			'h4_show_title',
-			[
-				'label' => esc_html__( 'Show Title', 'textdomain' ),
-				'type' => \Elementor\Controls_Manager::SWITCHER,
-				'label_on' => esc_html__( 'Yes', 'textdomain' ),
-				'label_off' => esc_html__( 'No', 'textdomain' ),
-				'return_value' => 'yes',
-				'default' => 'yes',
-			]
-		);
-
+            'section_5_title',
+            [
+                'label' => esc_html__('Title', 'elementor-addon'),
+                'type' => \Elementor\Controls_Manager::TEXT,
+                'default' => esc_html__('we provide the best digital services', 'elementor-addon'),
+                'placeholder' => esc_html__('Your Title here', 'elementor-addon'),
+            ]
+        );
 
         $this->end_controls_section();
 
+        // title Tab end
+
+        // description Tab Start
+
+        $this->start_controls_section(
+            'section_5_description_tab',
+            [
+                'label' => esc_html__('Description', 'elementor-addon'),
+                'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
+            ]
+        );
 
 
-		// Content Tab End
+        //  description 
+        $this->add_control(
+            'section_5_description',
+            [
+                'label' => esc_html__('Title', 'elementor-addon'),
+                'type' => \Elementor\Controls_Manager::TEXTAREA,
+                'default' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum obcaecati dignissimos quae quo ad iste ipsum officiis deleniti asperiores sit.', 'elementor-addon'),
+                'placeholder' => esc_html__('Your description here', 'elementor-addon'),
+            ]
+        );
+
+        $this->end_controls_section();
+
+        // description Tab end
+
+
+        // repeater Content Tab Start
+
+        $this->start_controls_section(
+            'section_5_content',
+            [
+                'label' => esc_html__('Content', 'elementor-addon'),
+                'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
+            ]
+        );
+
+
+
+
+        $this->add_control(
+            'section_5_content_lists',
+            [
+                'label' => esc_html__('Repeater List', 'elementor-addon'),
+                'type' => \Elementor\Controls_Manager::REPEATER,
+                'fields' => [
+                    [
+                        'name' => 'section_5_content_list_title',
+                        'label' => esc_html__('Title', 'elementor-addon'),
+                        'type' => \Elementor\Controls_Manager::TEXT,
+                        'default' => esc_html__('List Title', 'elementor-addon'),
+                        'label_block' => true,
+                    ],
+                    [
+                        'name' => 'section_5_content_list_desc',
+                        'label' => esc_html__('Content', 'elementor-addon'),
+                        'type' => \Elementor\Controls_Manager::WYSIWYG,
+                        'default' => esc_html__('List Content', 'elementor-addon'),
+                        'show_label' => false,
+                    ],
+                ],
+                'default' => [
+                    [
+                        'section_4_list_title' => esc_html__('Data Analytics', 'elementor-addon'),
+                        'section_4_list_desc' => esc_html__('Lorem ipsum dolor sit amet, consectet ur adipisicing elit, sed do eiusmod tempor incididunt emit.', 'elementor-addon'),
+                    ],
+                ],
+                'title_field' => '{{{ section_5_content_list_title }}}',
+            ]
+        );
+
+
+        $this->end_controls_section();
+        // repeater Content Tab end
+
+
+        // button Tab Start
+
+        $this->start_controls_section(
+            'section_5_button_tab',
+            [
+                'label' => esc_html__('Button', 'elementor-addon'),
+                'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
+            ]
+        );
+
+
+        //  title 
+        $this->add_control(
+            'section_5_button_title',
+            [
+                'label' => esc_html__('Title', 'elementor-addon'),
+                'type' => \Elementor\Controls_Manager::TEXT,
+                'default' => esc_html__('Learn more', 'elementor-addon'),
+                'placeholder' => esc_html__('Your Title here', 'elementor-addon'),
+            ]
+        );
+
+        $this->end_controls_section();
+
+        // title Tab end
+
+
+    }
+
+    protected function render()
+    {
+
+        $settings = $this->get_settings_for_display();
+        $section_5_title =   $settings['section_5_title'];
+        $section_5_description =   $settings['section_5_description'];
+        $section_5_content_lists =   $settings['section_5_content_lists'];
+        $section_5_button_title =   $settings['section_5_button_title'];
+
+
+
+?>
 
 
 
 
 
-	}
-
-	protected function render() { 
-
-		$settings = $this->get_settings_for_display();
-          $h4_title =   $settings['h4_title'];
-        // $hero_description =   $settings['hero_description'];
-        // $button_1 =   $settings['h1_button_1'];
-        // $button_1_link =   $settings['h1_button_1_link'];
-        // $button_2 =   $settings['h1_button_2'];
-        // $button_2_link =   $settings['h1_button_2_link'];   
-          $img_url_1 = $settings['h4_image']['url'] ; 
-
-      
-
-		?>
 
 
-
-
-
-
-
-        <!-- ***** Portfolio Area Start ***** -->
-        <section id="portfolio" class="portfolio-area overflow-hidden ptb_100">
+        <!-- ***** Service Area End ***** -->
+        <section id="service" class="section service-area bg-grey ptb_150">
+            <!-- Shape Top -->
+            <div class="shape shape-top">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none" fill="#FFFFFF">
+                    <path class="shape-fill" d="M421.9,6.5c22.6-2.5,51.5,0.4,75.5,5.3c23.6,4.9,70.9,23.5,100.5,35.7c75.8,32.2,133.7,44.5,192.6,49.7
+                c23.6,2.1,48.7,3.5,103.4-2.5c54.7-6,106.2-25.6,106.2-25.6V0H0v30.3c0,0,72,32.6,158.4,30.5c39.2-0.7,92.8-6.7,134-22.4
+                c21.2-8.1,52.2-18.2,79.7-24.2C399.3,7.9,411.6,7.5,421.9,6.5z"></path>
+                </svg>
+            </div>
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-12 col-md-10 col-lg-7">
                         <!-- Section Heading -->
                         <div class="section-heading text-center">
-                            <h2>Our Recent Works</h2>
-                            <p class="d-none d-sm-block mt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum obcaecati dignissimos quae quo ad iste ipsum officiis deleniti asperiores sit.</p>
-                            <p class="d-block d-sm-none mt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum obcaecati.</p>
+                            <h2><?php echo $section_5_title ?></h2>
+                            <p class="d-none d-sm-block mt-4"><?php echo $section_5_description ?></p>
                         </div>
                     </div>
                 </div>
-                <div class="row justify-content-center text-center">
-                    <div class="col-12">
-                        <!-- Portfolio Menu -->
-                        <div class="portfolio-menu btn-group btn-group-toggle flex-wrap justify-content-center text-center mb-4 mb-md-5" data-toggle="buttons">
-                            <label class="btn active d-table text-uppercase p-2">
-                                <input type="radio" value="all" checked class="portfolio-btn">
-                                <span>All</span>
-                            </label>
-                            <label class="btn d-table text-uppercase p-2">
-                                <input type="radio" value="marketing" class="portfolio-btn">
-                                <span>Marketing</span>
-                            </label>
-                            <label class="btn d-table text-uppercase p-2">
-                                <input type="radio" value="agency" class="portfolio-btn">
-                                <span>Agency</span>
-                            </label>
-                            <label class="btn d-table text-uppercase p-2">
-                                <input type="radio" value="seo" class="portfolio-btn">
-                                <span>SEO</span>
-                            </label>
-                            <label class="btn d-table text-uppercase p-2">
-                                <input type="radio" value="development" class="portfolio-btn">
-                                <span>App Development</span>
-                            </label>
+                <div class="row">
+
+                    <?php if ($section_5_content_lists) { ?>
+
+                        <?php foreach ($section_5_content_lists as $item) { ?>
+
+                            <div class="col-12 col-md-6 col-lg-4">
+
+                                <div class="single-service p-4">
+                                    <span class="flaticon-rocket-launch color-1 icon-bg-1"></span>
+                                    <!-- <img class="color-1 icon-bg-1" src="" alt=""> -->
+                                    <h3 class="my-3"><?php echo $item['section_5_content_list_title'] ?></h3>
+                                    <p><?php echo $item['section_5_content_list_desc'] ?></p>
+                                    <a class="service-btn mt-3" href="#"><?php echo $section_5_button_title ?></a>
+                                </div>
+                            </div>
+
+                    <?php }
+                    } ?>
+                    <!-- <div class="col-12 col-md-6 col-lg-4">
+                        
+                        <div class="single-service p-4">
+                            <span class="flaticon-monitoring color-2 icon-bg-2"></span>
+                            <h3 class="my-3">Website Growth</h3>
+                            <p>Lorem ipsum dolor sit amet, consectet ur adipisicing elit, sed do eiusmod tempor incididunt emit.</p>
+                            <a class="service-btn mt-3" href="#">Learn More</a>
                         </div>
                     </div>
-                </div>
-                <!-- Portfolio Items -->
-                <div class="row items portfolio-items">
-                    <div class="col-12 col-sm-6 col-lg-4 portfolio-item" data-groups='["marketing","development"]'>
-                        <!-- Single Case Studies -->
-                        <div class="single-case-studies">
-                            <!-- Case Studies Thumb -->
-                            <a href="#">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/case_studies/case_studies_1/thumb_1.jpg" alt="">
-                            </a>
-                            <!-- Case Studies Overlay -->
-                            <a href="#" class="case-studies-overlay">
-                                <!-- Overlay Text -->
-                                <span class="overlay-text text-center p-3">
-                                    <h3 class="text-white mb-3">Digital Marketing</h3>
-                                    <p class="text-white">Lorem ipsum dolor sit amet, consectet ur adipisicing elit.</p>
-                                </span>
-                            </a>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        
+                        <div class="single-service p-4">
+                            <span class="flaticon-web color-3 icon-bg-3"></span>
+                            <h3 class="my-3">Seo Ranking</h3>
+                            <p>Lorem ipsum dolor sit amet, consectet ur adipisicing elit, sed do eiusmod tempor incididunt emit.</p>
+                            <a class="service-btn mt-3" href="#">Learn More</a>
                         </div>
                     </div>
-                    <div class="col-12 col-sm-6 col-lg-4 portfolio-item" data-groups='["seo","development"]'>
-                        <!-- Single Case Studies -->
-                        <div class="single-case-studies">
-                            <!-- Case Studies Thumb -->
-                            <a href="#">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/case_studies/case_studies_1/thumb_2.jpg" alt="">
-                            </a>
-                            <!-- Case Studies Overlay -->
-                            <a href="#" class="case-studies-overlay">
-                                <!-- Overlay Text -->
-                                <span class="overlay-text text-center p-3">
-                                    <h3 class="text-white mb-3">App Development</h3>
-                                    <p class="text-white">Lorem ipsum dolor sit amet, consectet ur adipisicing elit.</p>
-                                </span>
-                            </a>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        
+                        <div class="single-service p-4">
+                            <span class="flaticon-smartphone color-4 icon-bg-4"></span>
+                            <h3 class="my-3">App Development</h3>
+                            <p>Lorem ipsum dolor sit amet, consectet ur adipisicing elit, sed do eiusmod tempor incididunt emit.</p>
+                            <a class="service-btn mt-3" href="#">Learn More</a>
                         </div>
                     </div>
-                    <div class="col-12 col-sm-6 col-lg-4 portfolio-item" data-groups='["marketing","agency"]'>
-                        <!-- Single Case Studies -->
-                        <div class="single-case-studies">
-                            <!-- Case Studies Thumb -->
-                            <a href="#">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/case_studies/case_studies_1/thumb_4.jpg" alt="">
-                            </a>
-                            <!-- Case Studies Overlay -->
-                            <a href="#" class="case-studies-overlay">
-                                <!-- Overlay Text -->
-                                <span class="overlay-text text-center p-3">
-                                    <h3 class="text-white mb-3">Content Management</h3>
-                                    <p class="text-white">Lorem ipsum dolor sit amet, consectet ur adipisicing elit.</p>
-                                </span>
-                            </a>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        
+                        <div class="single-service p-4">
+                            <span class="flaticon-email color-5 icon-bg-5"></span>
+                            <h3 class="my-3">Email Marketing</h3>
+                            <p>Lorem ipsum dolor sit amet, consectet ur adipisicing elit, sed do eiusmod tempor incididunt emit.</p>
+                            <a class="service-btn mt-3" href="#">Learn More</a>
                         </div>
                     </div>
-                    <div class="col-12 col-sm-6 col-lg-4 portfolio-item" data-groups='["agency","development","seo"]'>
-                        <!-- Single Case Studies -->
-                        <div class="single-case-studies">
-                            <!-- Case Studies Thumb -->
-                            <a href="#">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/case_studies/case_studies_1/thumb_3.jpg" alt="">
-                            </a>
-                            <!-- Case Studies Overlay -->
-                            <a href="#" class="case-studies-overlay">
-                                <!-- Overlay Text -->
-                                <span class="overlay-text text-center p-3">
-                                    <h3 class="text-white mb-3">Data Analysis</h3>
-                                    <p class="text-white">Lorem ipsum dolor sit amet, consectet ur adipisicing elit.</p>
-                                </span>
-                            </a>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        
+                        <div class="single-service p-4">
+                            <span class="flaticon-affiliate color-6 icon-bg-6"></span>
+                            <h3 class="my-3">Affiliate Marketing</h3>
+                            <p>Lorem ipsum dolor sit amet, consectet ur adipisicing elit, sed do eiusmod tempor incididunt emit.</p>
+                            <a class="service-btn mt-3" href="#">Learn More</a>
                         </div>
-                    </div>
-                    <div class="col-12 col-sm-6 col-lg-4 portfolio-item" data-groups='["development","marketing","development"]'>
-                        <!-- Single Case Studies -->
-                        <div class="single-case-studies">
-                            <!-- Case Studies Thumb -->
-                            <a href="#">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/case_studies/case_studies_1/thumb_5.jpg" alt="">
-                            </a>
-                            <!-- Case Studies Overlay -->
-                            <a href="#" class="case-studies-overlay">
-                                <!-- Overlay Text -->
-                                <span class="overlay-text text-center p-3">
-                                    <h3 class="text-white mb-3">SEO Marketing</h3>
-                                    <p class="text-white">Lorem ipsum dolor sit amet, consectet ur adipisicing elit.</p>
-                                </span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-6 col-lg-4 portfolio-item" data-groups='["agency","development","marketing","seo"]'>
-                        <!-- Single Case Studies -->
-                        <div class="single-case-studies">
-                            <!-- Case Studies Thumb -->
-                            <a href="#">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/case_studies/case_studies_1/thumb_6.jpg" alt="">
-                            </a>
-                            <!-- Case Studies Overlay -->
-                            <a href="#" class="case-studies-overlay">
-                                <!-- Overlay Text -->
-                                <span class="overlay-text text-center p-3">
-                                    <h3 class="text-white mb-3">Marketing Strategy</h3>
-                                    <p class="text-white">Lorem ipsum dolor sit amet, consectet ur adipisicing elit.</p>
-                                </span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="row justify-content-center">
-                    <a href="#" class="btn btn-bordered mt-4">View More</a>
+                    </div> -->
                 </div>
             </div>
+            <!-- Shape Bottom -->
+            <div class="shape shape-bottom">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none" fill="#FFFFFF">
+                    <path class="shape-fill" d="M421.9,6.5c22.6-2.5,51.5,0.4,75.5,5.3c23.6,4.9,70.9,23.5,100.5,35.7c75.8,32.2,133.7,44.5,192.6,49.7
+        c23.6,2.1,48.7,3.5,103.4-2.5c54.7-6,106.2-25.6,106.2-25.6V0H0v30.3c0,0,72,32.6,158.4,30.5c39.2-0.7,92.8-6.7,134-22.4
+        c21.2-8.1,52.2-18.2,79.7-24.2C399.3,7.9,411.6,7.5,421.9,6.5z"></path>
+                </svg>
+            </div>
         </section>
-        <!-- ***** Portfolio Area End ***** -->
+        <!-- ***** Service Area End ***** -->
 
 
 
-        
 
 
-		<?php
-	}
+
+<?php
+    }
 }

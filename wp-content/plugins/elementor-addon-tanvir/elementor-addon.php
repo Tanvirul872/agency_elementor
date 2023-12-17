@@ -37,14 +37,25 @@ function register_hello_world_widget( $widgets_manager ) {
     require_once( __DIR__ . '/widgets/home-third-widget.php' );
 
 	require_once( __DIR__ . '/widgets/home-fourth-widget.php' );
-	// require_once( __DIR__ . '/widgets/home-fifth-widget.php' );
+	require_once( __DIR__ . '/widgets/home-fifth-widget.php' );
+	require_once( __DIR__ . '/widgets/home-six-widget.php' );
+	require_once( __DIR__ . '/widgets/home-seven-widget.php' );
+	require_once( __DIR__ . '/widgets/home-eight-widget.php' );
+
+	require_once( __DIR__ . '/widgets/home-ten-widget.php' );
 	
     $widgets_manager->register( new \Banner_widget() );
 	$widgets_manager->register( new \Hero_widget() );
 	$widgets_manager->register( new \Home_second_widget() );
 	$widgets_manager->register( new \Home_third_widget() );
+	
 	$widgets_manager->register( new \Home_fourth_widget() );
-	// $widgets_manager->register( new \Home_fifth_widget() );
+	$widgets_manager->register( new \Home_fifth_widget() );
+	$widgets_manager->register( new \Home_six_widget() );
+	$widgets_manager->register( new \Home_seven_widget() );
+	$widgets_manager->register( new \Home_eight_widget() );
+
+	$widgets_manager->register( new \Home_ten_widget() );
 
 
 }
