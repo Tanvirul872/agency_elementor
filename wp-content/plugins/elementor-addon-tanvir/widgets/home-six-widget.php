@@ -120,135 +120,111 @@ class Home_six_widget extends \Elementor\Widget_Base
                 </div>
                 <div class="row justify-content-center text-center">
                     <div class="col-12">
-                        <!-- Portfolio Menu -->
-                        <div class="portfolio-menu btn-group btn-group-toggle flex-wrap justify-content-center text-center mb-4 mb-md-5" data-toggle="buttons">
-                            <label class="btn d-table text-uppercase p-2 active">
-                                <input type="radio" value="all" checked="" class="portfolio-btn-1">
-                                <span>All</span>
-                            </label>
-                            <label class="btn d-table text-uppercase p-2">
-                                <input type="radio" value="marketing" class="portfolio-btn-1">
-                                <span>Marketing</span>
-                            </label>
-                            <label class="btn d-table text-uppercase p-2">
-                                <input type="radio" value="agency" class="portfolio-btn-1">
-                                <span>Agency</span>
-                            </label>
-                            <label class="btn d-table text-uppercase p-2">
-                                <input type="radio" value="seo" class="portfolio-btn-1">
-                                <span>SEO</span>
-                            </label>
-                            <label class="btn d-table text-uppercase p-2">
-                                <input type="radio" value="development" class="portfolio-btn-1">
-                                <span>App Development</span>
-                            </label>
-                        </div>
+
+
+
+                        <?php
+                        // Custom post type name
+                        $post_type = 'works';
+
+                        // Custom taxonomy name
+                        $taxonomy = 'work_cat';
+
+                        // Get all terms for the custom taxonomy
+                        $terms = get_terms(array(
+                            'taxonomy' => $taxonomy,
+                            'hide_empty' => false, // Set to true to hide terms with no posts
+                        ));
+
+                        // Check if there are any terms
+                        if (!empty($terms)) {
+                            echo '<div class="portfolio-menu btn-group btn-group-toggle flex-wrap justify-content-center text-center mb-4 mb-md-5" data-toggle="buttons">';
+
+                            // Generate the "All" button
+                            echo '<label class="btn d-table text-uppercase p-2 active">';
+                            echo '<input type="radio" value="all" checked="" class="portfolio-btn-1">';
+                            echo '<span>All</span>';
+                            echo '</label>';
+
+                            // Generate buttons for each term
+                            foreach ($terms as $term) {
+                                $term_slug = $term->slug;
+                                $term_name = $term->name;
+
+                                echo '<label class="btn d-table text-uppercase p-2">';
+                                echo '<input type="radio" value="' . esc_attr($term_slug) . '" class="portfolio-btn-1">';
+                                echo '<span>' . esc_html($term_name) . '</span>';
+                                echo '</label>';
+                            }
+
+                            echo '</div>';
+                        }
+                        ?>
+
                     </div>
                 </div>
                 <!-- Portfolio Items -->
                 <div class="row items portfolio-items-1 shuffle" style="position: relative; overflow: hidden; height: 615px; transition: height 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;">
-                    <div class="col-12 col-sm-6 col-lg-4 portfolio-item-1 shuffle-item shuffle-item--visible" data-groups="[&quot;marketing&quot;,&quot;development&quot;]" style="position: absolute; top: 0px; left: 0px; visibility: visible; will-change: transform; opacity: 1; transition-duration: 250ms; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-property: transform, opacity; transform: translate(0px, 0px) scale(1);">
-                        <!-- Single Case Studies -->
-                        <div class="single-case-studies">
-                            <!-- Case Studies Thumb -->
-                            <a href="#">
-                                <img src="http://localhost/agency_elementor/wp-content/themes/picchi/assets/img/case_studies/case_studies_1/thumb_1.jpg" alt="">
-                            </a>
-                            <!-- Case Studies Overlay -->
-                            <a href="#" class="case-studies-overlay">
-                                <!-- Overlay Text -->
-                                <span class="overlay-text text-center p-3">
-                                    <h3 class="text-white mb-3">Digital Marketing</h3>
-                                    <p class="text-white">Lorem ipsum dolor sit amet, consectet ur adipisicing elit.</p>
-                                </span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-6 col-lg-4 portfolio-item-1 shuffle-item shuffle-item--visible" data-groups="[&quot;seo&quot;,&quot;development&quot;]" style="position: absolute; top: 0px; left: 0px; visibility: visible; will-change: transform; opacity: 1; transform: translate(380px, 0px) scale(1); transition-duration: 250ms; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-property: transform, opacity;">
-                        <!-- Single Case Studies -->
-                        <div class="single-case-studies">
-                            <!-- Case Studies Thumb -->
-                            <a href="#">
-                                <img src="http://localhost/agency_elementor/wp-content/themes/picchi/assets/img/case_studies/case_studies_1/thumb_2.jpg" alt="">
-                            </a>
-                            <!-- Case Studies Overlay -->
-                            <a href="#" class="case-studies-overlay">
-                                <!-- Overlay Text -->
-                                <span class="overlay-text text-center p-3">
-                                    <h3 class="text-white mb-3">App Development</h3>
-                                    <p class="text-white">Lorem ipsum dolor sit amet, consectet ur adipisicing elit.</p>
-                                </span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-6 col-lg-4 portfolio-item-1 shuffle-item shuffle-item--visible" data-groups="[&quot;marketing&quot;,&quot;agency&quot;]" style="position: absolute; top: 0px; left: 0px; visibility: visible; will-change: transform; opacity: 1; transform: translate(760px, 0px) scale(1); transition-duration: 250ms; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-property: transform, opacity;">
-                        <!-- Single Case Studies -->
-                        <div class="single-case-studies">
-                            <!-- Case Studies Thumb -->
-                            <a href="#">
-                                <img src="http://localhost/agency_elementor/wp-content/themes/picchi/assets/img/case_studies/case_studies_1/thumb_4.jpg" alt="">
-                            </a>
-                            <!-- Case Studies Overlay -->
-                            <a href="#" class="case-studies-overlay">
-                                <!-- Overlay Text -->
-                                <span class="overlay-text text-center p-3">
-                                    <h3 class="text-white mb-3">Content Management</h3>
-                                    <p class="text-white">Lorem ipsum dolor sit amet, consectet ur adipisicing elit.</p>
-                                </span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-6 col-lg-4 portfolio-item-1 shuffle-item shuffle-item--visible" data-groups="[&quot;agency&quot;,&quot;development&quot;,&quot;seo&quot;]" style="position: absolute; top: 0px; left: 0px; visibility: visible; will-change: transform; opacity: 1; transform: translate(0px, 308px) scale(1); transition-duration: 250ms; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-property: transform, opacity;">
-                        <!-- Single Case Studies -->
-                        <div class="single-case-studies">
-                            <!-- Case Studies Thumb -->
-                            <a href="#">
-                                <img src="http://localhost/agency_elementor/wp-content/themes/picchi/assets/img/case_studies/case_studies_1/thumb_3.jpg" alt="">
-                            </a>
-                            <!-- Case Studies Overlay -->
-                            <a href="#" class="case-studies-overlay">
-                                <!-- Overlay Text -->
-                                <span class="overlay-text text-center p-3">
-                                    <h3 class="text-white mb-3">Data Analysis</h3>
-                                    <p class="text-white">Lorem ipsum dolor sit amet, consectet ur adipisicing elit.</p>
-                                </span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-6 col-lg-4 portfolio-item-1 shuffle-item shuffle-item--visible" data-groups="[&quot;development&quot;,&quot;marketing&quot;,&quot;development&quot;]" style="position: absolute; top: 0px; left: 0px; visibility: visible; will-change: transform; opacity: 1; transform: translate(380px, 308px) scale(1); transition-duration: 250ms; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-property: transform, opacity;">
-                        <!-- Single Case Studies -->
-                        <div class="single-case-studies">
-                            <!-- Case Studies Thumb -->
-                            <a href="#">
-                                <img src="http://localhost/agency_elementor/wp-content/themes/picchi/assets/img/case_studies/case_studies_1/thumb_5.jpg" alt="">
-                            </a>
-                            <!-- Case Studies Overlay -->
-                            <a href="#" class="case-studies-overlay">
-                                <!-- Overlay Text -->
-                                <span class="overlay-text text-center p-3">
-                                    <h3 class="text-white mb-3">SEO Marketing</h3>
-                                    <p class="text-white">Lorem ipsum dolor sit amet, consectet ur adipisicing elit.</p>
-                                </span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-6 col-lg-4 portfolio-item-1 shuffle-item shuffle-item--visible" data-groups="[&quot;agency&quot;,&quot;development&quot;,&quot;marketing&quot;,&quot;seo&quot;]" style="position: absolute; top: 0px; left: 0px; visibility: visible; will-change: transform; opacity: 1; transform: translate(760px, 308px) scale(1); transition-duration: 250ms; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-property: transform, opacity;">
-                        <!-- Single Case Studies -->
-                        <div class="single-case-studies">
-                            <!-- Case Studies Thumb -->
-                            <a href="#">
-                                <img src="http://localhost/agency_elementor/wp-content/themes/picchi/assets/img/case_studies/case_studies_1/thumb_6.jpg" alt="">
-                            </a>
-                            <!-- Case Studies Overlay -->
-                            <a href="#" class="case-studies-overlay">
-                                <!-- Overlay Text -->
-                                <span class="overlay-text text-center p-3">
-                                    <h3 class="text-white mb-3">Marketing Strategy</h3>
-                                    <p class="text-white">Lorem ipsum dolor sit amet, consectet ur adipisicing elit.</p>
-                                </span>
-                            </a>
-                        </div>
-                    </div>
+
+
+                    <?php
+                    // Define the query arguments
+                    $args = array(
+                        'post_type'      => 'works',
+                        'posts_per_page' => -1,
+                    );
+
+                    // Run the query
+                    $query = new WP_Query($args);
+
+                    // Check if there are any posts
+                    if ($query->have_posts()) :
+                        while ($query->have_posts()) : $query->the_post();
+
+                            // Get post terms for the 'work_cat' taxonomy
+                            $terms = get_the_terms(get_the_ID(), 'work_cat');
+                            $term_slugs = array();
+
+                            if ($terms && !is_wp_error($terms)) {
+                                foreach ($terms as $term) {
+                                    $term_slugs[] = $term->slug;
+                                }
+                            }
+
+                            // Output your HTML for each post
+                    ?>
+                            <div class="col-12 col-sm-6 col-lg-4 portfolio-item-1 shuffle-item shuffle-item--visible" data-groups='["<?php echo implode('","', $term_slugs); ?>"]' style="position: absolute; top: 0px; left: 0px; visibility: visible; will-change: transform; opacity: 1; transition-duration: 250ms; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-property: transform, opacity; transform: translate(0px, 0px) scale(1);">
+                                <!-- Single Case Studies -->
+                                <div class="single-case-studies">
+                                    <!-- Case Studies Thumb -->
+                                    <a href="#">
+                                        <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
+                                    </a>
+                                    <!-- Case Studies Overlay -->
+                                    <a href="<?php the_permalink(); ?>" class="case-studies-overlay">
+                                        <!-- Overlay Text -->
+                                        <span class="overlay-text text-center p-3">
+                                            <h3 class="text-white mb-3"><?php the_title(); ?></h3>
+                                            <p class="text-white"><?php the_excerpt(); ?></p>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                    <?php
+                        endwhile;
+                        wp_reset_postdata();
+                    else :
+                    // No posts found
+                    endif;
+                    ?>
+
+
+
+
+
+
+
+
                 </div>
                 <div class="row justify-content-center">
                     <a href="#" class="btn btn-bordered mt-4">View More</a>
