@@ -59,6 +59,54 @@ class Home_seven_widget extends \Elementor\Widget_Base
 
         // title Tab end
 
+
+
+        // Style Tab Start for title
+        $this->start_controls_section(
+            'section_7_title_style_tab',
+            [
+                'label' => esc_html__('Title', 'elementor-addon'),
+                'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+                'separator' => 'after',
+            ]
+        );
+
+
+        // color 
+        $this->add_control(
+            'section_7_title_color',
+            [
+                'label' => esc_html__('Color', 'elementor-addon'),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'default' => '#fff',
+                'selectors' => [
+                    '{{WRAPPER}} .section-heading.seven h2' => 'color: {{VALUE}} !important',
+                ],
+            ]
+        );
+
+        // typography 
+        $this->add_group_control(
+            \Elementor\Group_Control_Typography::get_type(),
+            [
+                'name' => 'section_7_title_typography',
+                'selector' => '{{WRAPPER}} .section-heading.seven h2',
+            ]
+        );
+
+
+        $this->end_controls_section();
+
+        // Style Tab end for title
+
+
+
+
+
+
+
+
+
         // description Tab Start
 
         $this->start_controls_section(
@@ -84,6 +132,47 @@ class Home_seven_widget extends \Elementor\Widget_Base
         $this->end_controls_section();
 
         // description Tab end
+
+
+
+        // Style Tab Start for description
+        $this->start_controls_section(
+            'section_7_description_style_tab',
+            [
+                'label' => esc_html__('Description', 'elementor-addon'),
+                'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+                'separator' => 'after',
+            ]
+        );
+
+
+        // color 
+        $this->add_control(
+            'section_7_description_color',
+            [
+                'label' => esc_html__('Color', 'elementor-addon'),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'default' => '#fff',
+                'selectors' => [
+                    '{{WRAPPER}} .section-heading.seven p' => 'color: {{VALUE}} !important',
+                ],
+            ]
+        );
+
+        // typography 
+        $this->add_group_control(
+            \Elementor\Group_Control_Typography::get_type(),
+            [
+                'name' => 'section_7_description_typography',
+                'selector' => '{{WRAPPER}} .section-heading.seven p',
+            ]
+        );
+
+
+        $this->end_controls_section();
+
+        // Style Tab end for description
+
 
 
 
@@ -181,6 +270,154 @@ class Home_seven_widget extends \Elementor\Widget_Base
         $this->end_controls_section();
 
         // basic price Tab end
+
+
+
+        // Style Tab Start for basic price
+        $this->start_controls_section(
+            'section_7_basic_price_style_tab',
+            [
+                'label' => esc_html__('Basic Price', 'elementor-addon'),
+                'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+                'separator' => 'after',
+            ]
+        );
+
+
+        // color 
+        $this->add_control(
+            'section_7_basic_title_color',
+            [
+                'label' => esc_html__('Basic Title Color', 'elementor-addon'),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'default' => '#fff',
+                'selectors' => [
+                    '{{WRAPPER}} .plan-title.seven h3' => 'color: {{VALUE}} !important',
+                ],
+            ]
+        );
+
+        // typography 
+        $this->add_group_control(
+            \Elementor\Group_Control_Typography::get_type(),
+            [
+                'name' => 'section_7_basic_title_typography',
+                'selector' => '{{WRAPPER}} .plan-title.seven h3',
+            ]
+        );
+
+
+        // color 
+        $this->add_control(
+            'section_7_basic_des_color',
+            [
+                'label' => esc_html__('Basic Description Color', 'elementor-addon'),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'default' => '#fff',
+                'selectors' => [
+                    '{{WRAPPER}} .plan-title.seven p' => 'color: {{VALUE}} !important',
+                ],
+            ]
+        );
+
+        // typography 
+        $this->add_group_control(
+            \Elementor\Group_Control_Typography::get_type(),
+            [
+                'name' => 'section_7_basic_desc_typography',
+                'selector' => '{{WRAPPER}} .plan-title.seven p',
+            ]
+        );
+
+
+
+
+        // color 
+        $this->add_control(
+            'section_7_basic_price_color',
+            [
+                'label' => esc_html__('Basic Price Color', 'elementor-addon'),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'default' => '#fff',
+                'selectors' => [
+                    '{{WRAPPER}} .plan-price.seven span' => 'color: {{VALUE}} !important',
+                ],
+            ]
+        );
+
+        // typography 
+        $this->add_group_control(
+            \Elementor\Group_Control_Typography::get_type(),
+            [
+                'name' => 'section_7_basic_price_typography',
+                'selector' => '{{WRAPPER}} .plan-price.seven span',
+            ]
+        );
+
+
+        // color 
+        $this->add_control(
+            'section_7_basic_dur_color',
+            [
+                'label' => esc_html__('Basic Duration Color', 'elementor-addon'),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'default' => '#fff',
+                'selectors' => [
+                    '{{WRAPPER}} .plan-price.seven sub' => 'color: {{VALUE}} !important',
+                ],
+            ]
+        );
+
+        // typography 
+        $this->add_group_control(
+            \Elementor\Group_Control_Typography::get_type(),
+            [
+                'name' => 'section_7_basic_dur_typography',
+                'selector' => '{{WRAPPER}} .plan-price.seven sub',
+            ]
+        );
+
+
+
+        // color 
+        $this->add_control(
+            'section_7_basic_button_color',
+            [
+                'label' => esc_html__('Basic Button Color', 'elementor-addon'),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'default' => '#fff',
+                'selectors' => [
+                    '{{WRAPPER}} .plan-button.seven-basic a' => 'color: {{VALUE}} !important',
+                ],
+            ]
+        );
+
+        // typography 
+        $this->add_group_control(
+            \Elementor\Group_Control_Typography::get_type(),
+            [
+                'name' => 'section_7_basic_button_typography',
+                'selector' => '{{WRAPPER}} .plan-button.seven-basic a ',
+            ]
+        );
+
+        $this->end_controls_section();
+
+        // Style Tab end for basic price
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -286,6 +523,157 @@ class Home_seven_widget extends \Elementor\Widget_Base
 
 
 
+        // Style Tab Start for pro price
+        $this->start_controls_section(
+            'section_7_pro_price_style_tab',
+            [
+                'label' => esc_html__('Pro Price', 'elementor-addon'),
+                'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+                'separator' => 'after',
+            ]
+        );
+
+
+        // color 
+        $this->add_control(
+            'section_7_pro_title_color',
+            [
+                'label' => esc_html__('Pro Title Color', 'elementor-addon'),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'default' => '#fff',
+                'selectors' => [
+                    '{{WRAPPER}} .plan-title.seven-pro h3' => 'color: {{VALUE}} !important',
+                ],
+            ]
+        );
+
+        // typography 
+        $this->add_group_control(
+            \Elementor\Group_Control_Typography::get_type(),
+            [
+                'name' => 'section_7_pro_title_typography',
+                'selector' => '{{WRAPPER}} .plan-title.seven-pro h3',
+            ]
+        );
+
+
+        // color 
+        $this->add_control(
+            'section_7_pro_des_color',
+            [
+                'label' => esc_html__('Pro Description Color', 'elementor-addon'),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'default' => '#fff',
+                'selectors' => [
+                    '{{WRAPPER}} .plan-title.seven-pro p' => 'color: {{VALUE}} !important',
+                ],
+            ]
+        );
+
+        // typography 
+        $this->add_group_control(
+            \Elementor\Group_Control_Typography::get_type(),
+            [
+                'name' => 'section_7_pro_desc_typography',
+                'selector' => '{{WRAPPER}} .plan-title.seven-pro p',
+            ]
+        );
+
+
+
+
+        // color 
+        $this->add_control(
+            'section_7_pro_price_color',
+            [
+                'label' => esc_html__('Pro Price Color', 'elementor-addon'),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'default' => '#fff',
+                'selectors' => [
+                    '{{WRAPPER}} .plan-price.seven-pro span' => 'color: {{VALUE}} !important',
+                ],
+            ]
+        );
+
+        // typography 
+        $this->add_group_control(
+            \Elementor\Group_Control_Typography::get_type(),
+            [
+                'name' => 'section_7_pro_price_typography',
+                'selector' => '{{WRAPPER}} .plan-price.seven-pro span',
+            ]
+        );
+
+
+        // color 
+        $this->add_control(
+            'section_7_pro_dur_color',
+            [
+                'label' => esc_html__('Pro Duration Color', 'elementor-addon'),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'default' => '#fff',
+                'selectors' => [
+                    '{{WRAPPER}} .plan-price.seven-pro sub' => 'color: {{VALUE}} !important',
+                ],
+            ]
+        );
+
+        // typography 
+        $this->add_group_control(
+            \Elementor\Group_Control_Typography::get_type(),
+            [
+                'name' => 'section_7_pro_dur_typography',
+                'selector' => '{{WRAPPER}} .plan-price.seven-pro sub',
+            ]
+        );
+
+
+
+        // color 
+        $this->add_control(
+            'section_7_pro_button_color',
+            [
+                'label' => esc_html__('Pro Button Color', 'elementor-addon'),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'default' => '#fff',
+                'selectors' => [
+                    '{{WRAPPER}} .plan-button.seven-pro a' => 'color: {{VALUE}} !important',
+                ],
+            ]
+        );
+
+        // typography 
+        $this->add_group_control(
+            \Elementor\Group_Control_Typography::get_type(),
+            [
+                'name' => 'section_7_pro_button_typography',
+                'selector' => '{{WRAPPER}} .plan-button.seven-pro a',
+            ]
+        );
+
+        $this->end_controls_section();
+
+        // Style Tab end for pro price
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         // footer Tab Start
 
@@ -372,7 +760,7 @@ class Home_seven_widget extends \Elementor\Widget_Base
                 <div class="row justify-content-center">
                     <div class="col-12 col-md-10 col-lg-7">
                         <!-- Section Heading -->
-                        <div class="section-heading text-center">
+                        <div class="section-heading seven text-center">
                             <h2><?php echo $section_7_title; ?></h2>
                             <p class="d-none d-sm-block mt-4"><?php echo $section_7_description; ?></p>
                         </div>
@@ -385,12 +773,12 @@ class Home_seven_widget extends \Elementor\Widget_Base
                                 <!-- Single Price Plan -->
                                 <div class="single-price-plan color-1 bg-hover hover-top text-center p-5">
                                     <!-- Plan Title -->
-                                    <div class="plan-title mb-2 mb-sm-3">
+                                    <div class="plan-title seven mb-2 mb-sm-3">
                                         <h3 class="mb-2"><?php echo $section_7_basic_title ?></h3>
                                         <p><?php echo $section_7_basic_desc ?></p>
                                     </div>
                                     <!-- Plan Price -->
-                                    <div class="plan-price pb-2 pb-sm-3">
+                                    <div class="plan-price seven pb-2 pb-sm-3">
                                         <span class="color-primary fw-7">$</span>
                                         <span class="h1 fw-7"><?php echo $section_7_basic_price; ?></span>
                                         <sub class="validity text-muted fw-5">/<?php echo $section_7_basic_duration; ?></sub>
@@ -408,7 +796,7 @@ class Home_seven_widget extends \Elementor\Widget_Base
                                     <?php } ?>
 
                                     <!-- Plan Button -->
-                                    <div class="plan-button">
+                                    <div class="plan-button seven-basic">
                                         <a href="#" class="btn btn-bordered mt-3"><?php echo $section_7_basic_button_text; ?></a>
                                     </div>
                                 </div>
@@ -417,12 +805,12 @@ class Home_seven_widget extends \Elementor\Widget_Base
                                 <!-- Single Price Plan -->
                                 <div class="single-price-plan color-2 bg-hover active hover-top text-center p-5">
                                     <!-- Plan Title -->
-                                    <div class="plan-title mb-2 mb-sm-3">
+                                    <div class="plan-title seven-pro mb-2 mb-sm-3">
                                         <h3 class="mb-2"><?php echo $section_7_pro_title; ?><sup><span class="badge badge-pill badge-warning ml-2"><?php echo $section_7_pro_save; ?></span></sup></h3>
                                         <p><?php echo $section_7_pro_desc; ?></p>
                                     </div>
                                     <!-- Plan Price -->
-                                    <div class="plan-price pb-2 pb-sm-3">
+                                    <div class="plan-price seven-pro pb-2 pb-sm-3">
                                         <span class="color-primary fw-7">$</span>
                                         <span class="h1 fw-7"><?php echo $section_7_pro_price; ?></span>
                                         <sub class="validity text-muted fw-5">/<?php echo $section_7_pro_duration; ?></sub>
@@ -444,7 +832,7 @@ class Home_seven_widget extends \Elementor\Widget_Base
                                         </ul>
                                     </div>
                                     <!-- Plan Button -->
-                                    <div class="plan-button">
+                                    <div class="plan-button seven-pro">
                                         <a href="#" class="btn btn-bordered mt-3"><?php echo $section_7_pro_button_text; ?></a>
                                     </div>
                                 </div>

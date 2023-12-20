@@ -59,6 +59,58 @@ class Home_six_widget extends \Elementor\Widget_Base
 
         // title Tab end
 
+
+
+
+        // Style Tab Start for title
+        $this->start_controls_section(
+            'section_6_title_style_tab',
+            [
+                'label' => esc_html__('Title', 'elementor-addon'),
+                'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+                'separator' => 'after',
+            ]
+        );
+
+
+        // color 
+        $this->add_control(
+            'section_6_title_color',
+            [
+                'label' => esc_html__('Color', 'elementor-addon'),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'default' => '#fff',
+                'selectors' => [
+                    '{{WRAPPER}} .section-heading.six h2' => 'color: {{VALUE}} !important',
+                ],
+            ]
+        );
+
+        // typography 
+        $this->add_group_control(
+            \Elementor\Group_Control_Typography::get_type(),
+            [
+                'name' => 'section_6_title_typography',
+                'selector' => '{{WRAPPER}} .section-heading.six h2',
+            ]
+        );
+
+
+        $this->end_controls_section();
+
+        // Style Tab end for title
+
+
+
+
+
+
+
+
+
+
+
+
         // description Tab Start
 
         $this->start_controls_section(
@@ -88,6 +140,50 @@ class Home_six_widget extends \Elementor\Widget_Base
 
 
 
+
+
+
+        // Style Tab Start for description
+        $this->start_controls_section(
+            'section_6_title_style_tab',
+            [
+                'label' => esc_html__('Title', 'elementor-addon'),
+                'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+                'separator' => 'after',
+            ]
+        );
+
+
+        // color 
+        $this->add_control(
+            'section_6_desc_color',
+            [
+                'label' => esc_html__('Color', 'elementor-addon'),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'default' => '#fff',
+                'selectors' => [
+                    '{{WRAPPER}} .section-heading.six p' => 'color: {{VALUE}} !important',
+                ],
+            ]
+        );
+
+        // typography 
+        $this->add_group_control(
+            \Elementor\Group_Control_Typography::get_type(),
+            [
+                'name' => 'section_6_desc_typography',
+                'selector' => '{{WRAPPER}} .section-heading.six p',
+            ]
+        );
+
+
+        $this->end_controls_section();
+
+        // Style Tab end for description
+
+
+
+
     }
 
     protected function render()
@@ -112,10 +208,10 @@ class Home_six_widget extends \Elementor\Widget_Base
                 <div class="row justify-content-center">
                     <div class="col-12 col-md-10 col-lg-7">
                         <!-- Section Heading -->
-                        <div class="section-heading text-center">
-                            <h2><?php echo $section_6_title; ?></h2>
-                            <p class="d-none d-sm-block mt-4"><?php echo $section_6_description; ?></p>
-                        </div>
+                            <div class="section-heading six text-center">
+                                <h2><?php echo $section_6_title; ?></h2>
+                                <p class="d-none d-sm-block mt-4"><?php echo $section_6_description; ?></p>
+                            </div>
                     </div>
                 </div>
                 <div class="row justify-content-center text-center">
@@ -226,9 +322,9 @@ class Home_six_widget extends \Elementor\Widget_Base
 
 
                 </div>
-                <div class="row justify-content-center">
+                <!-- <div class="row justify-content-center">
                     <a href="#" class="btn btn-bordered mt-4">View More</a>
-                </div>
+                </div> -->
             </div>
         </section>
         <!-- portfolio area section end  -->

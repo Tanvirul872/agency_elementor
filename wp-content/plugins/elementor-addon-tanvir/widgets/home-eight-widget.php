@@ -1,6 +1,8 @@
 <?php
+
 class Home_eight_widget extends \Elementor\Widget_Base
 {
+
 
     public function get_name()
     {
@@ -58,6 +60,63 @@ class Home_eight_widget extends \Elementor\Widget_Base
 
         // title Tab end
 
+
+        // Style Tab Start for title
+        $this->start_controls_section(
+            'section_8_title_style_tab',
+            [
+                'label' => esc_html__('Title', 'elementor-addon'),
+                'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+                'separator' => 'after',
+            ]
+        );
+
+
+        // color 
+        $this->add_control(
+            'section_8_title_color',
+            [
+                'label' => esc_html__('Color', 'elementor-addon'),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'default' => '#fff',
+                'selectors' => [
+                    '{{WRAPPER}} .row.justify-content-center .section-heading.eight h2' => 'color: {{VALUE}} !important',
+                ],
+            ]
+        );
+
+        // typography 
+        $this->add_group_control(
+            \Elementor\Group_Control_Typography::get_type(),
+            [
+                'name' => 'section_8_title_typography',
+                'selector' => '{{WRAPPER}} .row.justify-content-center .section-heading.eight h2',
+            ]
+        );
+
+
+        $this->end_controls_section();
+
+        // Style Tab end for title
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         // description Tab Start
 
         $this->start_controls_section(
@@ -82,6 +141,59 @@ class Home_eight_widget extends \Elementor\Widget_Base
         $this->end_controls_section();
 
         // description Tab end
+
+
+
+        // Style Tab Start for description
+        $this->start_controls_section(
+            'section_8_description_style_tab',
+            [
+                'label' => esc_html__('Description', 'elementor-addon'),
+                'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+                'separator' => 'after',
+            ]
+        );
+
+
+        // color 
+        $this->add_control(
+            'section_8_description_color',
+            [
+                'label' => esc_html__('Color', 'elementor-addon'),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'default' => '#fff',
+                'selectors' => [
+                    '{{WRAPPER}} .row.justify-content-center .section-heading.eight p' => 'color: {{VALUE}} !important',
+                ],
+            ]
+        );
+
+        // typography 
+        $this->add_group_control(
+            \Elementor\Group_Control_Typography::get_type(),
+            [
+                'name' => 'section_8_description_typography',
+                'selector' => '{{WRAPPER}} .row.justify-content-center .section-heading.eight p',
+            ]
+        );
+
+
+        $this->end_controls_section();
+
+        // Style Tab end for description
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         // review Tab Start
@@ -130,6 +242,21 @@ class Home_eight_widget extends \Elementor\Widget_Base
                         ],
                         'show_label' => false,
                     ],
+
+
+
+
+                    // [
+					// 	'name' => 'list_color',
+					// 	'label' => esc_html__( 'Color', 'textdomain' ),
+					// 	'type' => \Elementor\Controls_Manager::COLOR,
+					// 	'selectors' => [
+					// 		'{{WRAPPER}} {{CURRENT_ITEM}}' => 'color: {{VALUE}}'
+					// 	],
+					// ]
+
+
+
                 ],
                 'default' => [
                     [
@@ -180,7 +307,7 @@ class Home_eight_widget extends \Elementor\Widget_Base
                 <div class="row justify-content-center">
                     <div class="col-12 col-md-10 col-lg-8">
                         <!-- Section Heading -->
-                        <div class="section-heading text-center">
+                        <div class="section-heading eight text-center">
                             <h2 class="text-white"><?php echo $section_8_title; ?></h2>
                             <p class="text-white d-none d-sm-block mt-4"><?php echo $section_8_description; ?></p>
                         </div>
@@ -199,7 +326,7 @@ class Home_eight_widget extends \Elementor\Widget_Base
                                             <p><?php echo $item['section_8_review_content'] ?></p>
                                         </div>
                                         <div class="quot-icon">
-                                            <img class="avatar-sm" src="assets/img/quote.png" alt="">
+                                            <img class="avatar-sm" src="<?php echo get_template_directory_uri() ?>/assets/img/quote.png" alt="">
                                         </div>
                                     </div>
                                     <!-- Reviewer -->
@@ -216,58 +343,6 @@ class Home_eight_widget extends \Elementor\Widget_Base
 
                         <?php }
                         } ?>
-                        <!-- Single Review -->
-                        <!-- <div class="single-review p-5">
-                           
-                            <div class="review-content">
-                         
-                                <div class="review-text">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam est modi amet error earum aperiam, fuga labore facere rem ab nemo possimus cum excepturi expedita. Culpa rerum, quaerat qui non.</p>
-                                </div>
-                               
-                                <div class="quot-icon">
-                                    <img class="avatar-sm" src="assets/img/quote.png" alt="">
-                                </div>
-                            </div>
-                         
-                            <div class="reviewer media mt-3">
-                           
-                                <div class="reviewer-thumb">
-                                    <img class="avatar-lg radius-100" src="assets/img/avatar/avatar-2.png" alt="">
-                                </div>
-                              
-                                <div class="reviewer-meta media-body align-self-center ml-4">
-                                    <h5 class="reviewer-name color-primary mb-2">Yasmin Akter</h5>
-                                    <h6 class="text-secondary fw-6">Founder, Themeland</h6>
-                                </div>
-                            </div>
-                        </div>
-                  
-                        <div class="single-review p-5">
-                       
-                            <div class="review-content">
-                            
-                                <div class="review-text">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam est modi amet error earum aperiam, fuga labore facere rem ab nemo possimus cum excepturi expedita. Culpa rerum, quaerat qui non.</p>
-                                </div>
-                             
-                                <div class="quot-icon">
-                                    <img class="avatar-sm" src="assets/img/quote.png" alt="">
-                                </div>
-                            </div>
-                        
-                            <div class="reviewer media mt-3">
-                           
-                                <div class="reviewer-thumb">
-                                    <img class="avatar-lg radius-100" src="assets/img/avatar/avatar-3.png" alt="">
-                                </div>
-                         
-                                <div class="reviewer-meta media-body align-self-center ml-4">
-                                    <h5 class="reviewer-name color-primary mb-2">Md. Arham</h5>
-                                    <h6 class="text-secondary fw-6">CEO, Themeland</h6>
-                                </div>
-                            </div>
-                        </div> -->
                     </div>
                 </div>
             </div>

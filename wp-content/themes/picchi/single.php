@@ -1,40 +1,36 @@
 <?php
-/**
- * The template for displaying all single posts
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
- *
- * @package picchi
- */
-
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
-
+<div id="primary" class="content-area">
+	<main id="main" class="site-main">
 		<?php
-		while ( have_posts() ) :
+		while (have_posts()) :
 			the_post();
+		?>
+			<div class="single-blog">
+				<div class="blog-thumb">
+					<img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title_attribute(); ?>">
+				</div>
+				<div class="blog-content">
+					<ul class="meta-info d-flex justify-content-between">
+						<li>By <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?></a></li>
+						<li><?php the_time('M d, Y'); ?></li>
+					</ul>
+					<h1 class="blog-title my-3"><?php the_title(); ?></h1>
+					<div class="blog-post-content">
+						<?php the_content(); ?>
+					</div>
+				</div>
+			</div>
+		<?php
 
-			get_template_part( 'template-parts/content', get_post_type() );
-
-			the_post_navigation(
-				array(
-					'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'picchi' ) . '</span> <span class="nav-title">%title</span>',
-					'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'picchi' ) . '</span> <span class="nav-title">%title</span>',
-				)
-			);
-
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
 
 		endwhile; // End of the loop.
 		?>
-
 	</main><!-- #main -->
+</div><!-- #primary -->
 
 <?php
-get_sidebar();
 get_footer();
+?>

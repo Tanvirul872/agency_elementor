@@ -3006,3 +3006,7 @@ body.dark,
     -webkit-box-shadow: 0 0.313rem 0.875rem rgba(45, 49, 54, 0.12);
     box-shadow: 0 0.313rem 0.875rem rgba(45, 49, 54, 0.12);
 }
+
+.row.fo {
+    margin-top: 35px;
+}

@@ -58,10 +58,17 @@ function register_hello_world_widget($widgets_manager)
 	require_once(__DIR__ . '/widgets/home-six-widget.php');
 	require_once(__DIR__ . '/widgets/home-seven-widget.php');
 	require_once(__DIR__ . '/widgets/home-eight-widget.php');
-
 	require_once(__DIR__ . '/widgets/home-nine-widget.php');
-
 	require_once(__DIR__ . '/widgets/home-ten-widget.php');
+
+
+	require_once(__DIR__ . '/widgets/blog-banner-widget.php');
+	require_once(__DIR__ . '/widgets/blog-content-widget.php');
+
+	require_once(__DIR__ . '/widgets/blog-single-widget.php');
+
+
+	
 
 	$widgets_manager->register(new \Banner_widget());
 	$widgets_manager->register(new \Hero_widget());
@@ -73,10 +80,16 @@ function register_hello_world_widget($widgets_manager)
 	$widgets_manager->register(new \Home_six_widget());
 	$widgets_manager->register(new \Home_seven_widget());
 	$widgets_manager->register(new \Home_eight_widget());
-
 	$widgets_manager->register(new \Home_nine_widget());
-
 	$widgets_manager->register(new \Home_ten_widget());
+
+
+	$widgets_manager->register(new \Blog_banner_widget());
+	
+	$widgets_manager->register(new \Blog_content_widget());
+
+	$widgets_manager->register(new \Single_Blog_Content_Widget());
+
 }
 add_action('elementor/widgets/register', 'register_hello_world_widget');
 

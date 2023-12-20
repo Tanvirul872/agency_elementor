@@ -59,6 +59,52 @@ class Home_nine_widget extends \Elementor\Widget_Base
         // title Tab end
 
 
+        // Style Tab Start for title
+        $this->start_controls_section(
+            'section_9_title_style_tab',
+            [
+                'label' => esc_html__('Title', 'elementor-addon'),
+                'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+                'separator' => 'after',
+            ]
+        );
+
+
+        // color 
+        $this->add_control(
+            'section_9_title_color',
+            [
+                'label' => esc_html__('Color', 'elementor-addon'),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'default' => '#fff',
+                'selectors' => [
+                    '{{WRAPPER}} .section-heading.nine h2' => 'color: {{VALUE}} !important',
+                ],
+            ]
+        );
+
+        // typography 
+        $this->add_group_control(
+            \Elementor\Group_Control_Typography::get_type(),
+            [
+                'name' => 'section_9_title_typography',
+                'selector' => '{{WRAPPER}} .section-heading.nine h2',
+            ]
+        );
+
+
+        $this->end_controls_section();
+
+        // Style Tab end for title
+
+
+
+
+
+
+
+
+
         // description Tab Start
 
         $this->start_controls_section(
@@ -85,6 +131,60 @@ class Home_nine_widget extends \Elementor\Widget_Base
         // description Tab end
 
 
+        // Style Tab Start for description
+        $this->start_controls_section(
+            'section_9_description_style_tab',
+            [
+                'label' => esc_html__('Description', 'elementor-addon'),
+                'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+                'separator' => 'after',
+            ]
+        );
+
+
+        // color 
+        $this->add_control(
+            'section_9_description_color',
+            [
+                'label' => esc_html__('Color', 'elementor-addon'),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'default' => '#fff',
+                'selectors' => [
+                    '{{WRAPPER}} .section-heading.nine p' => 'color: {{VALUE}} !important',
+                ],
+            ]
+        );
+
+        // typography 
+        $this->add_group_control(
+            \Elementor\Group_Control_Typography::get_type(),
+            [
+                'name' => 'section_9_description_typography',
+                'selector' => '{{WRAPPER}} .section-heading.nine p',
+            ]
+        );
+
+
+        $this->end_controls_section();
+
+        // Style Tab end for description
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         // contact Tab Start
 
@@ -97,7 +197,7 @@ class Home_nine_widget extends \Elementor\Widget_Base
         );
 
 
-         
+
         $this->add_control(
             'section_9_contact_phone',
             [
@@ -155,6 +255,205 @@ class Home_nine_widget extends \Elementor\Widget_Base
 
 
 
+        // Style Tab Start for contact
+        $this->start_controls_section(
+            'section_9_Contact_style_tab',
+            [
+                'label' => esc_html__('Contact', 'elementor-addon'),
+                'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+                'separator' => 'after',
+            ]
+        );
+
+
+        // color number
+        $this->add_control(
+            'section_9_contact_phone_color',
+            [
+                'label' => esc_html__('Number Color', 'elementor-addon'),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'default' => '#fff',
+                'selectors' => [
+                    '{{WRAPPER}} .contact-info.nine-phone h3' => 'color: {{VALUE}} !important',
+                ],
+            ]
+        );
+
+        // typography 
+        $this->add_group_control(
+            \Elementor\Group_Control_Typography::get_type(),
+            [
+                'name' => 'section_9_contact_phone_typography',
+                'selector' => '{{WRAPPER}} .contact-info.nine-phone h3',
+            ]
+        );
+
+        // color number desc
+        $this->add_control(
+            'section_9_contact_phone_desc_color',
+            [
+                'label' => esc_html__('Number Desc Color', 'elementor-addon'),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'default' => '#fff',
+                'selectors' => [
+                    '{{WRAPPER}} .contact-info.nine-phone p' => 'color: {{VALUE}} !important',
+                ],
+            ]
+        );
+
+        // typography 
+        $this->add_group_control(
+            \Elementor\Group_Control_Typography::get_type(),
+            [
+                'name' => 'section_9_contact_phone_desc_typography',
+                'selector' => '{{WRAPPER}} .contact-info.nine-phone p',
+            ]
+        );
+
+
+
+
+        // color email
+        $this->add_control(
+            'section_9_contact_email_color',
+            [
+                'label' => esc_html__('Email Color', 'elementor-addon'),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'default' => '#fff',
+                'selectors' => [
+                    '{{WRAPPER}} .contact-info.nine-email h3' => 'color: {{VALUE}} !important',
+                ],
+            ]
+        );
+
+        // typography 
+        $this->add_group_control(
+            \Elementor\Group_Control_Typography::get_type(),
+            [
+                'name' => 'section_9_contact_email_typography',
+                'selector' => '{{WRAPPER}} .contact-info.nine-email h3',
+            ]
+        );
+
+        // color number desc
+        $this->add_control(
+            'section_9_contact_email_desc_color',
+            [
+                'label' => esc_html__('Email Desc Color', 'elementor-addon'),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'default' => '#fff',
+                'selectors' => [
+                    '{{WRAPPER}} .contact-info.nine-email p' => 'color: {{VALUE}} !important',
+                ],
+            ]
+        );
+
+        // typography 
+        $this->add_group_control(
+            \Elementor\Group_Control_Typography::get_type(),
+            [
+                'name' => 'section_9_contact_email_desc_typography',
+                'selector' => '{{WRAPPER}} .contact-info.nine-email p',
+            ]
+        );
+
+
+        // color button text
+        $this->add_control(
+            'section_9_contact_button_color',
+            [
+                'label' => esc_html__('Button Text Color', 'elementor-addon'),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'default' => '#fff',
+                'selectors' => [
+                    '{{WRAPPER}} #contact-form .btn.nine' => 'color: {{VALUE}} !important',
+                ],
+            ]
+        );
+
+        // typography 
+        $this->add_group_control(
+            \Elementor\Group_Control_Typography::get_type(),
+            [
+                'name' => 'section_9_contact_button_typography',
+                'selector' => '{{WRAPPER}} #contact-form .btn.nine',
+            ]
+        );
+
+
+        
+        // border
+        $this->add_group_control(
+            \Elementor\Group_Control_Border::get_type(),
+            [
+                'name' => 'section_9_contact_button_border',
+                'label' => esc_html__('Border', 'elementor-addon'),
+                'selector' => '{{WRAPPER}} #contact-form .btn.nine',
+            ]
+        );
+
+        // background
+        $this->add_control(
+            'section_9_contact_button_background',
+            [
+                'label' => esc_html__('Background', 'elementor-addon'),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} #contact-form .btn.nine' => 'background-color: {{VALUE}} !important',
+                ],
+            ]
+        );
+
+
+        // margin
+		$this->add_control(
+			'section_9_contact_button_margin',
+			[
+				'label' => esc_html__('Margin', 'textdomain'),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units' => ['px', '%', 'em', 'rem', 'custom'],
+				'selectors' => [
+					'{{WRAPPER}} #contact-form .btn.nine' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}} !important;',
+				],
+			]
+		);
+
+		// padding 
+		$this->add_control(
+			'section_9_contact_button_padding',
+			[
+				'label' => esc_html__('Padding', 'textdomain'),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units' => ['px', '%', 'em', 'rem', 'custom'],
+				'selectors' => [
+					'{{WRAPPER}} #contact-form .btn.nine' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}} !important;',
+				],
+			]
+		);
+
+		// border radius 
+		$this->add_control(
+			'section_9_contact_button_radius',
+			[
+				'label' => esc_html__('Border Radius', 'textdomain'),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units' => ['px', '%', 'em', 'rem', 'custom'],
+				'selectors' => [
+					'{{WRAPPER}} #contact-form .btn.nine' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}} !important;',
+				],
+			]
+		);
+
+
+
+
+        $this->end_controls_section();
+
+        // Style Tab end for contact
+
+
+
+
 
 
 
@@ -191,30 +490,28 @@ class Home_nine_widget extends \Elementor\Widget_Base
                 <div class="row justify-content-between align-items-center">
                     <div class="col-12 col-lg-5">
                         <!-- Section Heading -->
-                        <div class="section-heading text-center mb-3">
+                        <div class="section-heading nine text-center mb-3">
                             <h2><?php echo $section_9_title; ?></h2>
-                            <p class="d-none d-sm-block mt-4"><?php echo $section_9_description; ?></p>>
+                            <p class="d-none d-sm-block mt-4"><?php echo $section_9_description; ?></p>
                         </div>
                         <!-- Contact Us -->
                         <div class="contact-us">
                             <ul>
                                 <!-- Contact Info -->
-                                <li class="contact-info color-1 bg-hover active hover-bottom text-center p-5 m-3">
+                                <li class="contact-info color-1 bg-hover active hover-bottom nine-phone text-center p-5 m-3">
                                     <span><i class="fas fa-mobile-alt fa-3x"></i></span>
-                                    <a class="d-block my-2" href="#">
+                                    <a class="d-block my-2 " href="#">
                                         <h3><?php echo $section_9_contact_phone; ?></h3>
                                     </a>
                                     <p><?php echo $section_9_contact_phone_des; ?></p>
                                 </li>
                                 <!-- Contact Info -->
-                                <li class="contact-info color-3 bg-hover active hover-bottom text-center p-5 m-3">
+                                <li class="contact-info color-3 bg-hover active hover-bottom nine-email text-center p-5 m-3">
                                     <span><i class="fas fa-envelope-open-text fa-3x"></i></span>
-                                    <!-- <a class="d-none d-sm-block my-2" href="#">
-                                        <h3>mail@company.com</h3>
-                                    </a> -->
-                                    <a class="d-block d-sm-none my-2" href="#">
+                                    <a class="d-none d-sm-block my-2" href="#">
                                         <h3><?php echo $section_9_contact_email; ?></h3>
                                     </a>
+
                                     <p><?php echo $section_9_contact_email_des; ?></p>
                                 </li>
                             </ul>
@@ -246,7 +543,7 @@ class Home_nine_widget extends \Elementor\Widget_Base
                                         </div>
                                     </div>
                                     <div class="col-12">
-                                        <button type="submit" class="btn btn-bordered active btn-block mt-3"><span class="text-white pr-3"><i class="fas fa-paper-plane"></i></span><?php echo $section_9_contact_button_text; ?></button>
+                                        <button type="submit" class="btn btn-bordered nine active btn-block mt-3"><span class="text-white pr-3"><i class="fas fa-paper-plane"></i></span><?php echo $section_9_contact_button_text; ?></button>
 
                                         <!-- <button type="submit">Submit</button> -->
                                     </div>

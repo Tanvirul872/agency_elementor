@@ -59,6 +59,49 @@ class Home_ten_widget extends \Elementor\Widget_Base
         // title Tab end
 
 
+
+
+        // Style Tab Start for title
+        $this->start_controls_section(
+            'section_10_title_style_tab',
+            [
+                'label' => esc_html__('Title', 'elementor-addon'),
+                'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+                'separator' => 'after',
+            ]
+        );
+
+
+
+
+        // color 
+        $this->add_control(
+            'section_10_title_color',
+            [
+                'label' => esc_html__('Color', 'elementor-addon'),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'default' => '#fff',
+                'selectors' => [
+                    '{{WRAPPER}} .section-heading h2.ten' => 'color: {{VALUE}} !important',
+                ],
+            ]
+        );
+
+        // typography 
+        $this->add_group_control(
+            \Elementor\Group_Control_Typography::get_type(),
+            [
+                'name' => 'section_10_title_typography',
+                'selector' => '{{WRAPPER}} .section-heading h2.ten',
+            ]
+        );
+
+
+        $this->end_controls_section();
+
+        // Style Tab end for title
+
+
         // description Tab Start
 
         $this->start_controls_section(
@@ -94,7 +137,153 @@ class Home_ten_widget extends \Elementor\Widget_Base
 
         // description Tab end
 
-        
+
+
+        // Style Tab Start for description
+        $this->start_controls_section(
+            'section_10_description_style_tab',
+            [
+                'label' => esc_html__('Description', 'elementor-addon'),
+                'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+                'separator' => 'after',
+            ]
+        );
+
+
+
+
+        // color 
+        $this->add_control(
+            'section_10_description_color',
+            [
+                'label' => esc_html__('Color', 'elementor-addon'),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'default' => '#fff',
+                'selectors' => [
+                    '{{WRAPPER}} .section-heading p.ten' => 'color: {{VALUE}} !important',
+                ],
+            ]
+        );
+
+        // typography 
+        $this->add_group_control(
+            \Elementor\Group_Control_Typography::get_type(),
+            [
+                'name' => 'section_10_desc_typography',
+                'selector' => '{{WRAPPER}} .section-heading p.ten',
+            ]
+        );
+
+
+        $this->end_controls_section();
+
+        // Style Tab end for description
+
+
+
+        // Style Tab Start for button text
+        $this->start_controls_section(
+            'section_10_button_style_tab',
+            [
+                'label' => esc_html__('Button', 'elementor-addon'),
+                'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+                'separator' => 'after',
+            ]
+        );
+
+
+
+
+        // color 
+        $this->add_control(
+            'section_10_button_color',
+            [
+                'label' => esc_html__('Color', 'elementor-addon'),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'default' => '#fff',
+                'selectors' => [
+                    '{{WRAPPER}} .section-heading a.ten' => 'color: {{VALUE}} !important',
+                ],
+            ]
+        );
+
+        // typography 
+        $this->add_group_control(
+            \Elementor\Group_Control_Typography::get_type(),
+            [
+                'name' => 'section_10_button_typography',
+                'selector' => '{{WRAPPER}} .section-heading a.ten',
+            ]
+        );
+
+
+        // border
+        $this->add_group_control(
+            \Elementor\Group_Control_Border::get_type(),
+            [
+                'name' => 'section_10_button_border',
+                'label' => esc_html__('Border', 'elementor-addon'),
+                'selector' => '{{WRAPPER}} .section-heading a.ten',
+            ]
+        );
+
+        // background
+        $this->add_control(
+            'section_10_button_background',
+            [
+                'label' => esc_html__('Background', 'elementor-addon'),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .section-heading a.ten' => 'background-color: {{VALUE}} !important',
+                ],
+            ]
+        );
+
+
+        // margin
+		$this->add_control(
+			'section_10_button_margin',
+			[
+				'label' => esc_html__('Margin', 'textdomain'),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units' => ['px', '%', 'em', 'rem', 'custom'],
+				'selectors' => [
+					'{{WRAPPER}} .section-heading a.ten' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		// padding 
+		$this->add_control(
+			'section_10_button_padding',
+			[
+				'label' => esc_html__('Padding', 'textdomain'),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units' => ['px', '%', 'em', 'rem', 'custom'],
+				'selectors' => [
+					'{{WRAPPER}} .section-heading a.ten' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		// border radius 
+		$this->add_control(
+			'section_10_button_border_radius',
+			[
+				'label' => esc_html__('Border Radius', 'textdomain'),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units' => ['px', '%', 'em', 'rem', 'custom'],
+				'selectors' => [
+					'{{WRAPPER}} .section-heading a.ten' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+
+        $this->end_controls_section();
+
+        // Style Tab end for description
+
 
 
 
@@ -124,16 +313,16 @@ class Home_ten_widget extends \Elementor\Widget_Base
 
 
 
-      <!--====== Call To Action Area Start ======-->
-      <section class="section cta-area bg-overlay ptb_100">
+        <!--====== Call To Action Area Start ======-->
+        <section class="section cta-area bg-overlay ptb_100">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-12 col-lg-10">
                         <!-- Section Heading -->
                         <div class="section-heading text-center m-0">
-                            <h2 class="text-white"><?php echo $section_10_title; ?></h2>
-                            <p class="text-white d-none d-sm-block mt-4"><?php echo $section_10_description; ?></p>
-                            <a href="#" class="btn btn-bordered-white mt-4"><?php echo $section_10_link_title; ?></a>
+                            <h2 class="text-white ten"><?php echo $section_10_title; ?></h2>
+                            <p class="text-white d-none d-sm-block mt-4 ten"><?php echo $section_10_description; ?></p>
+                            <a href="#" class="btn btn-bordered-white mt-4 ten"><?php echo $section_10_link_title; ?></a>
                         </div>
                     </div>
                 </div>

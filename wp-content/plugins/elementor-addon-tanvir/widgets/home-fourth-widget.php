@@ -303,14 +303,79 @@ class Home_fourth_widget extends \Elementor\Widget_Base
             ]
         );
 
-        // // typography 
-        // $this->add_group_control(
-        //     \Elementor\Group_Control_Typography::get_type(),
-        //     [
-        //         'name' => '4_btn_typography',
-        //         'selector' => '{{WRAPPER}} .btn-bordered',
-        //     ]
-        // );
+        // typography 
+        $this->add_group_control(
+            \Elementor\Group_Control_Typography::get_type(),
+            [
+                'name' => '4_btn_typography',
+                'selector' => '{{WRAPPER}} .btn-bordered',
+            ]
+        );
+
+
+        // border
+        $this->add_group_control(
+            \Elementor\Group_Control_Border::get_type(),
+            [
+                'name' => 'h4_btn_color_border',
+                'label' => esc_html__('Border', 'elementor-addon'),
+                'selector' => '{{WRAPPER}} .btn-bordered',
+            ]
+        );
+
+        // background
+        $this->add_control(
+            'h4_btn_color_background',
+            [
+                'label' => esc_html__('Background', 'elementor-addon'),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .btn-bordered' => 'background-color: {{VALUE}} !important',
+                ],
+            ]
+        );
+
+
+        // margin
+		$this->add_control(
+			'h4_btn_color_margin',
+			[
+				'label' => esc_html__('Margin', 'textdomain'),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units' => ['px', '%', 'em', 'rem', 'custom'],
+				'selectors' => [
+					'{{WRAPPER}} .btn-bordered' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		// padding 
+		$this->add_control(
+			'h4_btn_color_padding',
+			[
+				'label' => esc_html__('Padding', 'textdomain'),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units' => ['px', '%', 'em', 'rem', 'custom'],
+				'selectors' => [
+					'{{WRAPPER}} .btn-bordered' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		// border radius 
+		$this->add_control(
+			'h4_btn_color_radius',
+			[
+				'label' => esc_html__('Border Radius', 'textdomain'),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units' => ['px', '%', 'em', 'rem', 'custom'],
+				'selectors' => [
+					'{{WRAPPER}} h4_btn_color_' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+
 
 
         $this->end_controls_section();

@@ -59,6 +59,55 @@ class Home_fifth_widget extends \Elementor\Widget_Base
 
         // title Tab end
 
+
+
+        // Style Tab Start for title
+        $this->start_controls_section(
+            'section_5_title_style_tab',
+            [
+                'label' => esc_html__('Title', 'elementor-addon'),
+                'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+                'separator' => 'after',
+            ]
+        );
+
+
+        // color 
+        $this->add_control(
+            'section_5_title_color',
+            [
+                'label' => esc_html__('Color', 'elementor-addon'),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'default' => '#fff',
+                'selectors' => [
+                    '{{WRAPPER}} .section-heading.five h2' => 'color: {{VALUE}} !important',
+                ],
+            ]
+        );
+
+        // typography 
+        $this->add_group_control(
+            \Elementor\Group_Control_Typography::get_type(),
+            [
+                'name' => 'section_5_title_typography',
+                'selector' => '{{WRAPPER}} .section-heading.five h2',
+            ]
+        );
+
+
+        $this->end_controls_section();
+
+        // Style Tab end for title
+
+
+
+
+
+
+
+
+
+
         // description Tab Start
 
         $this->start_controls_section(
@@ -86,6 +135,51 @@ class Home_fifth_widget extends \Elementor\Widget_Base
         // description Tab end
 
 
+        // Style Tab Start for description
+        $this->start_controls_section(
+            'section_5_description_style_tab',
+            [
+                'label' => esc_html__('Description', 'elementor-addon'),
+                'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+                'separator' => 'after',
+            ]
+        );
+
+
+        // color 
+        $this->add_control(
+            'section_5_description_color',
+            [
+                'label' => esc_html__('Color', 'elementor-addon'),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'default' => '#fff',
+                'selectors' => [
+                    '{{WRAPPER}} .section-heading.five p' => 'color: {{VALUE}} !important',
+                ],
+            ]
+        );
+
+        // typography 
+        $this->add_group_control(
+            \Elementor\Group_Control_Typography::get_type(),
+            [
+                'name' => 'section_5_description_typography',
+                'selector' => '{{WRAPPER}} .section-heading.five p',
+            ]
+        );
+
+
+        $this->end_controls_section();
+
+        // Style Tab end for title
+
+
+
+
+
+
+
+
         // repeater Content Tab Start
 
         $this->start_controls_section(
@@ -105,6 +199,13 @@ class Home_fifth_widget extends \Elementor\Widget_Base
                 'label' => esc_html__('Repeater List', 'elementor-addon'),
                 'type' => \Elementor\Controls_Manager::REPEATER,
                 'fields' => [
+                    [
+                        'name' => 'section_5_content_list_icon',
+                        'label' => esc_html__('Icon', 'elementor-addon'),
+                        'type' => \Elementor\Controls_Manager::ICON,
+                        'default' => 'fas fa-star', // Default icon class
+                        'label_block' => true,
+                    ],
                     [
                         'name' => 'section_5_content_list_title',
                         'label' => esc_html__('Title', 'elementor-addon'),
@@ -197,7 +298,7 @@ class Home_fifth_widget extends \Elementor\Widget_Base
                 <div class="row justify-content-center">
                     <div class="col-12 col-md-10 col-lg-7">
                         <!-- Section Heading -->
-                        <div class="section-heading text-center">
+                        <div class="section-heading five text-center">
                             <h2><?php echo $section_5_title ?></h2>
                             <p class="d-none d-sm-block mt-4"><?php echo $section_5_description ?></p>
                         </div>
