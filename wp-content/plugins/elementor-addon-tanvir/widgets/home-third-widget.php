@@ -71,6 +71,24 @@ class Home_third_widget extends \Elementor\Widget_Base
 		);
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		// Repeater field start 
 
 		$this->add_control(
@@ -173,6 +191,203 @@ class Home_third_widget extends \Elementor\Widget_Base
 
 
 
+		// Style Tab Start for title
+		$this->start_controls_section(
+			'h3_title_style_tab',
+			[
+				'label' => esc_html__('Title', 'elementor-addon'),
+				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+				'separator' => 'after',
+			]
+		);
+
+
+		// color 
+		$this->add_control(
+			'h3_title_color',
+			[
+				'label' => esc_html__('Title Color', 'elementor-addon'),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'default' => '#fff',
+				'selectors' => [
+					'{{WRAPPER}} .section-heading.third h2' => 'color: {{VALUE}} !important',
+				],
+			]
+		);
+
+		// typography 
+		$this->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
+			[
+				'name' => 'h3_title_typography',
+				'selector' => '{{WRAPPER}} .section-heading.third h2',
+			]
+		);
+
+
+		$this->end_controls_section();
+
+		// Style Tab end for title
+
+
+
+
+		// Style Tab Start for description
+		$this->start_controls_section(
+			'h3_description_style_tab',
+			[
+				'label' => esc_html__('Description', 'elementor-addon'),
+				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+				'separator' => 'after',
+			]
+		);
+
+
+		// color 
+		$this->add_control(
+			'h3_description_color',
+			[
+				'label' => esc_html__('Description Color', 'elementor-addon'),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'default' => '#fff',
+				'selectors' => [
+					'{{WRAPPER}} .section-heading.third p' => 'color: {{VALUE}} !important',
+				],
+			]
+		);
+
+		// typography 
+		$this->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
+			[
+				'name' => 'h3_description_typography',
+				'selector' => '{{WRAPPER}} .section-heading.third p',
+			]
+		);
+
+
+		$this->end_controls_section();
+
+		// Style Tab end for description
+
+
+
+		// Style Tab Start for button
+		$this->start_controls_section(
+			'h3_btn_title_style_tab',
+			[
+				'label' => esc_html__('Button', 'elementor-addon'),
+				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+				'separator' => 'after',
+			]
+		);
+
+
+		// color 
+		$this->add_control(
+			'h3_btn_title_color',
+			[
+				'label' => esc_html__('Button Color', 'elementor-addon'),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'default' => '#fff',
+				'selectors' => [
+					'{{WRAPPER}} a.third' => 'color: {{VALUE}} !important',
+				],
+			]
+		);
+
+		// typography 
+		$this->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
+			[
+				'name' => 'h3_btn_title_typography',
+				'selector' => '{{WRAPPER}} a.third !important',
+			]
+		);
+
+
+		// border
+		$this->add_group_control(
+			\Elementor\Group_Control_Border::get_type(),
+			[
+				'name' => 'h3_btn_title_border',
+				'label' => esc_html__('Border', 'elementor-addon'),
+				'selector' => '{{WRAPPER}} a.third !important',
+			]
+		);
+
+		// background
+		$this->add_control(
+			'h3_btn_title_background',
+			[
+				'label' => esc_html__('Background', 'elementor-addon'),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}}  a.third' => 'background-color: {{VALUE}} !important',
+				],
+			]
+		);
+
+
+		// margin
+		$this->add_control(
+			'h3_btn_title_margin',
+			[
+				'label' => esc_html__('Margin', 'textdomain'),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units' => ['px', '%', 'em', 'rem', 'custom'],
+				'selectors' => [
+					'{{WRAPPER}}  a.third' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}} !important;',
+				],
+			]
+		);	
+
+		// padding 
+		$this->add_control(
+			'h3_btn_title_padding',
+			[
+				'label' => esc_html__('Padding', 'textdomain'),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units' => ['px', '%', 'em', 'rem', 'custom'],
+				'selectors' => [
+					'{{WRAPPER}}  a.third' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}} !important;',
+				],
+			]
+		);
+
+		// border radius 
+		$this->add_control(
+			'h3_btn_title_radius',
+			[
+				'label' => esc_html__('Border Radius', 'textdomain'),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units' => ['px', '%', 'em', 'rem', 'custom'],
+				'selectors' => [
+					'{{WRAPPER}}  a.third' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}} !important;',
+				],
+			]
+		);
+
+
+		$this->end_controls_section();
+
+		// Style Tab end for button
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	}
 
 	protected function render()
@@ -207,9 +422,9 @@ class Home_third_widget extends \Elementor\Widget_Base
 				<div class="row justify-content-between">
 					<div class="col-12 col-lg-6">
 						<!-- Content Inner -->
-						<div class="content-inner text-center">
+						<div class="content-inner  text-center">
 							<!-- Section Heading -->
-							<div class="section-heading text-center mb-3">
+							<div class="section-heading third text-center mb-3">
 								<h2><?php echo $h3_title; ?></h2>
 								<p class="d-none d-sm-block mt-4"><?php echo $h3_description; ?></p>
 							</div>
@@ -237,7 +452,7 @@ class Home_third_widget extends \Elementor\Widget_Base
 
 
 							</ul>
-							<a href="<?php echo $h3_btn_link; ?>" class="btn btn-bordered mt-4"><?php echo $h3_btn_title; ?></a>
+							<a href="<?php echo $h3_btn_link; ?>" class="btn btn-bordered third mt-4"><?php echo $h3_btn_title; ?></a>
 						</div>
 					</div>
 					<div class="col-12 col-lg-6">

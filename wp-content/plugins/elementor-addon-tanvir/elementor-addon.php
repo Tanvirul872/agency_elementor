@@ -60,13 +60,15 @@ function register_hello_world_widget($widgets_manager)
 	require_once(__DIR__ . '/widgets/home-eight-widget.php');
 	require_once(__DIR__ . '/widgets/home-nine-widget.php');
 	require_once(__DIR__ . '/widgets/home-ten-widget.php');
-
-
+    
+    
 	require_once(__DIR__ . '/widgets/blog-banner-widget.php');
 	require_once(__DIR__ . '/widgets/blog-content-widget.php');
-
+    
 	require_once(__DIR__ . '/widgets/blog-single-widget.php');
-
+    
+	require_once(__DIR__ . '/widgets/home-custom-widget.php');
+	require_once(__DIR__ . '/widgets/home-custom-widget-copy.php');
 
 	
 
@@ -82,14 +84,16 @@ function register_hello_world_widget($widgets_manager)
 	$widgets_manager->register(new \Home_eight_widget());
 	$widgets_manager->register(new \Home_nine_widget());
 	$widgets_manager->register(new \Home_ten_widget());
-
-
+    
+    
 	$widgets_manager->register(new \Blog_banner_widget());
 	
 	$widgets_manager->register(new \Blog_content_widget());
-
+    
 	$widgets_manager->register(new \Single_Blog_Content_Widget());
-
+    
+	$widgets_manager->register(new \Home_custom_widget());
+	$widgets_manager->register(new \Home_copy_widget());
 }
 add_action('elementor/widgets/register', 'register_hello_world_widget');
 
@@ -119,6 +123,8 @@ function add_elementor_widget_categories($elements_manager)
 	);
 }
 add_action('elementor/elements/categories_registered', 'add_elementor_widget_categories');
+
+
 
 
 

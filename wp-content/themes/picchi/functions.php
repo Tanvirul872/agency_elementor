@@ -248,3 +248,104 @@ function create_custom_post_type()
 	);
 }
 add_action('init', 'create_custom_post_type');
+
+
+
+
+
+
+// Register Custom Post Type
+function custom_post_type_team()
+{
+
+	$labels = array(
+		'name'                  => _x('Teams', 'Post Type General Name', 'elementor-addon'),
+		'singular_name'         => _x('Team', 'Post Type Singular Name', 'elementor-addon'),
+		'menu_name'             => __('Teams', 'elementor-addon'),
+		'name_admin_bar'        => __('Team', 'elementor-addon'),
+		'archives'              => __('Team Archives', 'elementor-addon'),
+		'attributes'            => __('Team Attributes', 'elementor-addon'),
+		'parent_item_colon'     => __('Parent Team:', 'elementor-addon'),
+		'all_items'             => __('All Teams', 'elementor-addon'),
+		'add_new_item'          => __('Add New Team', 'elementor-addon'),
+		'add_new'               => __('Add New', 'elementor-addon'),
+		'new_item'              => __('New Team', 'elementor-addon'),
+		'edit_item'             => __('Edit Team', 'elementor-addon'),
+		'update_item'           => __('Update Team', 'elementor-addon'),
+		'view_item'             => __('View Team', 'elementor-addon'),
+		'view_items'            => __('View Teams', 'elementor-addon'),
+		'search_items'          => __('Search Team', 'elementor-addon'),
+		'not_found'             => __('Not found', 'elementor-addon'),
+		'not_found_in_trash'    => __('Not found in Trash', 'elementor-addon'),
+		'featured_image'        => __('Featured Image', 'elementor-addon'),
+		'set_featured_image'    => __('Set featured image', 'elementor-addon'),
+		'remove_featured_image' => __('Remove featured image', 'elementor-addon'),
+		'use_featured_image'    => __('Use as featured image', 'elementor-addon'),
+		'insert_into_item'      => __('Insert into Team', 'elementor-addon'),
+		'uploaded_to_this_item' => __('Uploaded to this Team', 'elementor-addon'),
+		'items_list'            => __('Teams list', 'elementor-addon'),
+		'items_list_navigation' => __('Teams list navigation', 'elementor-addon'),
+		'filter_items_list'     => __('Filter Teams list', 'elementor-addon'),
+	);
+	$args = array(
+		'label'                 => __('Team', 'elementor-addon'),
+		'description'           => __('Post Type Description', 'elementor-addon'),
+		'labels'                => $labels,
+		'supports'              => array('title', 'editor', 'thumbnail', 'custom-fields'),
+		'taxonomies'            => array('team_cat'),
+		'hierarchical'          => false,
+		'public'                => true,
+		'show_ui'               => true,
+		'show_in_menu'          => true,
+		'menu_position'         => 5,
+		'menu_icon'             => 'dashicons-groups',
+		'show_in_admin_bar'     => true,
+		'show_in_nav_menus'     => true,
+		'can_export'            => true,
+		'has_archive'           => true,
+		'exclude_from_search'   => false,
+		'publicly_queryable'    => true,
+		'capability_type'       => 'page',
+	);
+	register_post_type('team', $args);
+}
+add_action('init', 'custom_post_type_team', 0);
+
+// Register Custom Taxonomy
+function custom_taxonomy_team_cat()
+{
+
+	$labels = array(
+		'name'                       => _x('Team Categories', 'Taxonomy General Name', 'elementor-addon'),
+		'singular_name'              => _x('Team Category', 'Taxonomy Singular Name', 'elementor-addon'),
+		'menu_name'                  => __('Team Category', 'elementor-addon'),
+		'all_items'                  => __('All Team Categories', 'elementor-addon'),
+		'parent_item'                => __('Parent Team Category', 'elementor-addon'),
+		'parent_item_colon'          => __('Parent Team Category:', 'elementor-addon'),
+		'new_item_name'              => __('New Team Category Name', 'elementor-addon'),
+		'add_new_item'               => __('Add New Team Category', 'elementor-addon'),
+		'edit_item'                  => __('Edit Team Category', 'elementor-addon'),
+		'update_item'                => __('Update Team Category', 'elementor-addon'),
+		'view_item'                  => __('View Team Category', 'elementor-addon'),
+		'separate_items_with_commas' => __('Separate items with commas', 'elementor-addon'),
+		'add_or_remove_items'        => __('Add or remove items', 'elementor-addon'),
+		'choose_from_most_used'      => __('Choose from the most used', 'elementor-addon'),
+		'popular_items'              => __('Popular Items', 'elementor-addon'),
+		'search_items'               => __('Search Items', 'elementor-addon'),
+		'not_found'                  => __('Not Found', 'elementor-addon'),
+		'no_terms'                   => __('No items', 'elementor-addon'),
+		'items_list'                 => __('Items list', 'elementor-addon'),
+		'items_list_navigation'      => __('Items list navigation', 'elementor-addon'),
+	);
+	$args = array(
+		'labels'                     => $labels,
+		'hierarchical'               => true,
+		'public'                     => true,
+		'show_ui'                    => true,
+		'show_admin_column'          => true,
+		'show_in_nav_menus'          => true,
+		'show_tagcloud'              => true,
+	);
+	register_taxonomy('team_cat', array('team'), $args);
+}
+add_action('init', 'custom_taxonomy_team_cat', 0);
